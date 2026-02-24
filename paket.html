@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Paket Outbound Batu Outbound - Pilihan paket Silver, Gold, dan Platinum untuk team building, fun gathering, dan corporate retreat di Kota Batu, Malang.">
+  <meta name="keywords" content="paket outbound batu, harga outbound malang, paket team building, paket gathering batu, corporate retreat">
+  <meta name="author" content="batuoutbound.id">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Paket Outbound - Batu Outbound">
+  <meta property="og:description" content="Pilih paket outbound terbaik mulai Rp 150K/orang. Silver, Gold, Platinum tersedia untuk berbagai kebutuhan.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://batuoutbound.id/paket">
+
+  <title>Paket Outbound | Batu Outbound - Harga & Pilihan Terbaik</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect rx='20' width='100' height='100' fill='%231a56db'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='50' fill='white' font-family='Arial' font-weight='bold'%3EBO%3C/text%3E%3C/svg%3E">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* ============================================
+       PAKET PAGE SPECIFIC STYLES
+       ============================================ */
+
+    /* Page Hero */
+    .page-hero {
+      position: relative;
+      padding: 160px 0 100px;
+      background: linear-gradient(135deg, #0b1120 0%, #132952 50%, #1a56db 100%);
+      color: var(--white);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -150px;
+      left: -150px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .page-hero .breadcrumb-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 20px;
+    }
+
+    .page-hero .breadcrumb-nav a {
+      color: rgba(255,255,255,0.6);
+      transition: var(--transition-base);
+    }
+
+    .page-hero .breadcrumb-nav a:hover {
+      color: var(--accent-light);
+    }
+
+    .page-hero .breadcrumb-nav i {
+      font-size: 10px;
+    }
+
+    .page-hero-title {
+      font-size: 52px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+      color: var(--white);
+    }
+
+    .page-hero-subtitle {
+      font-size: 18px;
+      color: rgba(255,255,255,0.75);
+      max-width: 650px;
+      margin: 0 auto;
+      line-height: 1.8;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Pricing Toggle */
+    .pricing-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 50px;
+    }
+
+    .pricing-toggle-label {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--gray-600);
+      cursor: pointer;
+      transition: var(--transition-base);
+    }
+
+    .pricing-toggle-label.active {
+      color: var(--primary);
+    }
+
+    .pricing-toggle-switch {
+      width: 56px;
+      height: 30px;
+      background: var(--gray-300);
+      border-radius: 50px;
+      position: relative;
+      cursor: pointer;
+      transition: var(--transition-base);
+    }
+
+    .pricing-toggle-switch.active {
+      background: var(--primary-gradient);
+    }
+
+    .pricing-toggle-switch::after {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background: white;
+      border-radius: 50%;
+      top: 3px;
+      left: 3px;
+      transition: var(--transition-base);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .pricing-toggle-switch.active::after {
+      left: 29px;
+    }
+
+    .discount-badge {
+      background: rgba(10, 190, 100, 0.1);
+      color: #0abe64;
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    /* Enhanced Package Card */
+    .pkg-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--gray-200);
+      overflow: hidden;
+      transition: var(--transition-base);
+      height: 100%;
+      position: relative;
+    }
+
+    .pkg-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-2xl);
+      border-color: transparent;
+    }
+
+    .pkg-card.featured {
+      border: 2px solid var(--primary);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .pkg-card.featured:hover {
+      border-color: var(--primary);
+    }
+
+    .pkg-card .popular-ribbon {
+      position: absolute;
+      top: 20px;
+      right: -35px;
+      background: var(--primary-gradient);
+      color: white;
+      padding: 6px 40px;
+      font-size: 12px;
+      font-weight: 700;
+      font-family: var(--font-heading);
+      transform: rotate(45deg);
+      letter-spacing: 1px;
+      z-index: 3;
+    }
+
+    .pkg-header {
+      padding: 36px 32px 28px;
+      text-align: center;
+      position: relative;
+    }
+
+    .pkg-card.featured .pkg-header {
+      background: linear-gradient(135deg, #0b1120 0%, #132952 100%);
+      color: var(--white);
+    }
+
+    .pkg-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin: 0 auto 18px;
+      background: rgba(26, 86, 219, 0.08);
+      color: var(--primary);
+    }
+
+    .pkg-card.featured .pkg-icon {
+      background: rgba(255,255,255,0.1);
+      color: var(--accent-light);
+    }
+
+    .pkg-name {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--primary);
+      margin-bottom: 12px;
+      font-family: var(--font-heading);
+    }
+
+    .pkg-card.featured .pkg-name {
+      color: var(--accent-light);
+    }
+
+    .pkg-price {
+      font-size: 48px;
+      font-weight: 900;
+      font-family: var(--font-heading);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .pkg-price span.currency {
+      font-size: 22px;
+      font-weight: 700;
+      vertical-align: top;
+      margin-right: 2px;
+    }
+
+    .pkg-price span.unit {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .pkg-period {
+      font-size: 13px;
+      color: var(--gray-500);
+      margin-bottom: 0;
+    }
+
+    .pkg-card.featured .pkg-period {
+      color: rgba(255,255,255,0.6);
+    }
+
+    .pkg-desc {
+      font-size: 14px;
+      color: var(--gray-500);
+      padding: 0 32px;
+      margin-top: -8px;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .pkg-card.featured .pkg-desc {
+      color: rgba(255,255,255,0.6);
+    }
+
+    .pkg-body {
+      padding: 28px 32px 36px;
+    }
+
+    .pkg-features-title {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gray-400);
+      margin-bottom: 16px;
+      font-family: var(--font-heading);
+    }
+
+    .pkg-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--gray-100);
+      font-size: 14px;
+      color: var(--gray-700);
+    }
+
+    .pkg-feature:last-child {
+      border-bottom: none;
+    }
+
+    .pkg-feature i {
+      margin-top: 2px;
+      flex-shrink: 0;
+      font-size: 14px;
+    }
+
+    .pkg-feature i.fa-check-circle {
+      color: #0abe64;
+    }
+
+    .pkg-feature i.fa-times-circle {
+      color: var(--gray-300);
+    }
+
+    .pkg-feature.disabled {
+      color: var(--gray-400);
+    }
+
+    .pkg-feature.disabled span {
+      text-decoration: line-through;
+    }
+
+    .pkg-btn-wrap {
+      padding: 0 32px 32px;
+    }
+
+    .pkg-btn-wrap .btn {
+      width: 100%;
+      padding: 14px;
+      font-weight: 700;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-heading);
+      font-size: 15px;
+    }
+
+    /* Comparison Table */
+    .comparison-section {
+      background: var(--white);
+    }
+
+    .comparison-table-wrap {
+      overflow-x: auto;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--gray-200);
+      box-shadow: var(--shadow-md);
+    }
+
+    .comparison-table {
+      width: 100%;
+      min-width: 700px;
+      border-collapse: collapse;
+    }
+
+    .comparison-table thead th {
+      background: linear-gradient(135deg, #0b1120 0%, #132952 100%);
+      color: var(--white);
+      padding: 20px 24px;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 15px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .comparison-table thead th:first-child {
+      text-align: left;
+      width: 35%;
+    }
+
+    .comparison-table thead th:last-child {
+      border-right: none;
+    }
+
+    .comparison-table thead th.highlight {
+      background: var(--primary);
+      position: relative;
+    }
+
+    .comparison-table thead th.highlight::before {
+      content: '★ POPULER';
+      position: absolute;
+      top: -1px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: var(--dark);
+      font-size: 10px;
+      padding: 3px 12px;
+      border-radius: 0 0 8px 8px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .comparison-table tbody tr {
+      border-bottom: 1px solid var(--gray-100);
+      transition: var(--transition-base);
+    }
+
+    .comparison-table tbody tr:hover {
+      background: rgba(26, 86, 219, 0.02);
+    }
+
+    .comparison-table tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    .comparison-table tbody td {
+      padding: 16px 24px;
+      font-size: 14px;
+      color: var(--gray-600);
+      text-align: center;
+      border-right: 1px solid var(--gray-100);
+    }
+
+    .comparison-table tbody td:first-child {
+      text-align: left;
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    .comparison-table tbody td:last-child {
+      border-right: none;
+    }
+
+    .comparison-table tbody td.highlight-col {
+      background: rgba(26, 86, 219, 0.02);
+    }
+
+    .comparison-table .check-icon {
+      color: #0abe64;
+      font-size: 16px;
+    }
+
+    .comparison-table .cross-icon {
+      color: var(--gray-300);
+      font-size: 16px;
+    }
+
+    /* Add-on Cards */
+    .addon-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      padding: 28px 24px;
+      text-align: center;
+      transition: var(--transition-base);
+      height: 100%;
+    }
+
+    .addon-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(26, 86, 219, 0.2);
+    }
+
+    .addon-icon {
+      width: 56px;
+      height: 56px;
+      background: rgba(26, 86, 219, 0.08);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: var(--primary);
+      margin: 0 auto 16px;
+      transition: var(--transition-base);
+    }
+
+    .addon-card:hover .addon-icon {
+      background: var(--primary-gradient);
+      color: var(--white);
+    }
+
+    .addon-card h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .addon-card p {
+      font-size: 13px;
+      color: var(--gray-500);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .addon-price {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      color: var(--primary);
+      font-size: 16px;
+    }
+
+    /* Guarantee Section */
+    .guarantee-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 28px;
+      background: var(--white);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--gray-200);
+      transition: var(--transition-base);
+      height: 100%;
+    }
+
+    .guarantee-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+      border-color: transparent;
+    }
+
+    .guarantee-icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(26, 86, 219, 0.08);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .guarantee-card h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .guarantee-card p {
+      font-size: 13px;
+      color: var(--gray-500);
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .page-hero-title { font-size: 38px; }
+      .page-hero-subtitle { font-size: 16px; }
+      .pkg-price { font-size: 40px; }
+    }
+
+    @media (max-width: 768px) {
+      .page-hero { padding: 130px 0 70px; }
+      .page-hero-title { font-size: 30px; }
+      .page-hero-subtitle { font-size: 15px; }
+      .pkg-header { padding: 28px 24px 20px; }
+      .pkg-body { padding: 20px 24px 28px; }
+      .pkg-btn-wrap { padding: 0 24px 28px; }
+      .pkg-price { font-size: 36px; }
+      .guarantee-card { flex-direction: column; text-align: center; align-items: center; }
+    }
+
+    @media (max-width: 576px) {
+      .page-hero-title { font-size: 26px; }
+      .page-hero { padding: 120px 0 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================
+       PRELOADER
+       ============================================ -->
+  <div id="preloader">
+    <div class="preloader-inner">
+      <div class="loader-circle"></div>
+      <div class="brand-text">batu<span>outbound</span></div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       NAVBAR
+       ============================================ -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-custom" id="mainNavbar">
+    <div class="container">
+      <a class="navbar-brand navbar-brand-custom" href="index.html">
+        <div class="brand-icon">
+          <i class="fas fa-mountain-sun"></i>
+        </div>
+        batu<span class="brand-dot">outbound</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Beranda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">Tentang</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="layanan.html">Layanan</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="paket.html">Paket</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item nav-btn-cta">
+            <a class="btn btn-accent-custom" href="https://wa.me/6281234567890?text=Halo%20BatuOutbound,%20saya%20ingin%20konsultasi%20paket%20outbound" target="_blank">
+              <i class="fab fa-whatsapp"></i> Hubungi Kami
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       PAGE HERO
+       ============================================ -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb-nav">
+        <a href="index.html">Beranda</a>
+        <i class="fas fa-chevron-right"></i>
+        <span>Paket</span>
+      </div>
+      <h1 class="page-hero-title">Pilih Paket <span class="gradient-text">Terbaik Anda</span></h1>
+      <p class="page-hero-subtitle">
+        Berbagai pilihan paket outbound yang fleksibel dan transparan. Semua paket sudah termasuk instruktur profesional, peralatan berstandar, dan asuransi peserta.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       PRICING CARDS
+       ============================================ -->
+  <section class="section-padding" id="pricing">
+    <div class="container">
+      <div class="row g-4 justify-content-center">
+
+        <!-- SILVER -->
+        <div class="col-lg-4 col-md-6 reveal">
+          <div class="pkg-card">
+            <div class="pkg-header">
+              <div class="pkg-icon">
+                <i class="fas fa-medal"></i>
+              </div>
+              <div class="pkg-name">Silver</div>
+              <div class="pkg-price">
+                <span class="currency">Rp</span>150<span class="unit">K</span>
+              </div>
+              <p class="pkg-period">per orang / hari</p>
+            </div>
+            <p class="pkg-desc">Ideal untuk kegiatan half-day team building dengan budget terjangkau. Cocok untuk tim kecil hingga menengah.</p>
+            <div class="pkg-body">
+              <div class="pkg-features-title">Yang Didapatkan</div>
+              <div class="pkg-feature">
+                <i class="fas fa-check-circle"></i>
+                <span>5-6 Permainan Team Building</span>
+              </div>
+              <div class="pkg-feature">
+                <i class="fas fa-check-circle"></i>
+                <span>1x Makan Siang</span>
+              </div>
+              <div class="pkg-feature">
+                <i class="fas fa-check-circle"></i>
+                <span>1x Coffee Break</span>
+              </div>
+              <div class="pkg-feature">
+                <i class="fas fa-check-circle"></i>
+                <span>Instruktur Profesional</span>
+              </div>
+              <div class="pkg-feature">
+                <i class="fas fa-check-circle"></i>
+                <span>P3K & Asuransi Peserta</span>
+              </div>
+              <div class="pkg-feature disabled">
+                <i class="fas fa-times-circle"></i>
+                <span>Dokumentasi Foto/Video</span>
+              </div>
+              <div class="pkg-feature disabled">
+                <i class="fas fa-times-circle"></i>
+                <span>Sertifikat Peserta</span>
+              </div>
+              <div class="pkg-feature disabled">
+                <i class="fas fa-times-circle"></i>
+                <span>Merchandise & Kaos</span>
+              </div>
+            </div>
+            <div class="pkg-btn-wrap">
+              <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20Paket%20Silver%20outbound" target="_blank" class="btn btn-outline-dark">
+                <i class="fab fa-whatsapp me-2"></i> Pilih Silver
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- GOLD (FEATURED) -->
+        <div class="col-lg-4 col-md-6 reveal">
+          <div class="pkg-card featured">
+            <div class="popular-ribbon">POPULER</div>
+            <div class="pkg-header">
+              <div class="pkg-icon">
+                <i class="fas fa-crown"></i>
+              </div>
+              <div class="pkg-name">Gold</div>
+              <div class="pkg-price">
+                <span class="currency">Rp</span>275<span class="unit">K</span>
+              </div>
+              <p class="pkg-period">per orang / hari</p>
+            </div>
+            <p class="pkg-desc" style="color: var(--gray-500);">Paket terlengkap untuk full-day team building. Pilihan paling populer untuk corporate events.</p>
+            <div class="pkg-body">
+              <div class="pkg-features-title">Yang Didapatkan</div>
+              <div class="pkg-feature">
+                <i class="fas fa-check-circle"></i>
+                <span>8-10 Permainan Team Building</span>
+              </div>
+              <div class="pkg-feature">
+                <i class="fas fa-check-circle"></i>
+                <span>1x Makan Siang + 1x Makan Malam</span>
+              </div>
+              <div class="pkg-feature">
+                <i class="fas fa-check-circle"></i>
+                <span>2x Coffee Break + Snack</span>
+              </div>
+              <div class="pkg-feature">
+                <i class="fas fa-check-circle"></i>
+                <span>Instruktur Profesional</span>
+              </div>
+              <div class="pkg-feature">
+                <i class="fas fa-check-circle"></i>
+                <span>Dokumentasi Foto & Video</span>
+              </div>
+              <div class="pkg-feature">
+                <i class="fas fa-check-circle"></i>
+                <span>Sertifikat Peserta</span>
+              </div>
+              <div class="pkg-feature">
+                <i class="fas fa-check-circle"></i>
+                <span>P3K & Asuransi Peserta</span>
+              </div>
+              <div class="pkg-feature disabled">
+                <i class="fas fa-times-circle"></i>
+                <span>Akomodasi & BBQ Night</span>
+              </div>
+            </div>
+            <div class="pkg-btn-wrap">
+              <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20Paket%20Gold%20outbound" target="_blank" class="btn btn-accent-custom">
+                <i class="fab fa-whatsapp me-2"></i> Pilih Gold
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PLATINUM -->
+        <div class="col-lg-4 col-md-6 reveal">
+          <div class="pkg-card">
+            <div class="pkg-header">
+              <div class="pkg-icon">
+                <i class="fas fa-gem"></i>
+              </div>
+              <div class="pkg-name">Platinum</div>
+              <div class="pkg-price">
+                <span class="currency">Rp</span>450<span class="unit">K</span>
+              </div>
+              <p class="pkg-period">per orang / 2 hari 1 malam</p>
+            </div>
+            <p class="pkg-desc">Pengalaman premium all-inclusive. Corporate retreat dengan akomodasi, BBQ night, dan dokumentasi cinematic.</p>
+            <div class="pkg-body">
+              <div class="pkg-features-title">Yang Didapatkan</div>
+              <div class="pkg-feature">
+                <i class="fas fa-check-circle"></i>
+                <span>10-15 Permainan + Flying Fox</span>
+              </div>
+              <div class="pkg-feature">
+                <i class="fas fa-check-circle"></i>
+                <span>Full Meals (3x Makan)</span>
+              </div>
+              <div class="pkg-feature">
+                <i class="fas fa-check-circle"></i>
+                <span>Akomodasi Villa / Camp</span>
+              </div>
+              <div class="pkg-feature">
+                <i class="fas fa-check-circle"></i>
+                <span>BBQ Night & Bonfire</span>
+              </div>
+              <div class="pkg-feature">
+                <i class="fas fa-check-circle"></i>
+                <span>Dokumentasi Drone & Cinematic</span>
+              </div>
+              <div class="pkg-feature">
+                <i class="fas fa-check-circle"></i>
+                <span>Sertifikat & Trophy</span>
+              </div>
+              <div class="pkg-feature">
+                <i class="fas fa-check-circle"></i>
+                <span>Kaos Outbound & Merchandise</span>
+              </div>
+              <div class="pkg-feature">
+                <i class="fas fa-check-circle"></i>
+                <span>P3K & Asuransi Peserta</span>
+              </div>
+            </div>
+            <div class="pkg-btn-wrap">
+              <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20Paket%20Platinum%20outbound" target="_blank" class="btn btn-outline-dark">
+                <i class="fab fa-whatsapp me-2"></i> Pilih Platinum
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="text-center text-muted mt-4" style="font-size: 14px;">
+        <i class="fas fa-info-circle me-1"></i> Harga berlaku untuk minimum 20 peserta. Harga dapat disesuaikan sesuai jumlah peserta dan kebutuhan program.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       COMPARISON TABLE
+       ============================================ -->
+  <section class="comparison-section section-padding bg-light-custom">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">
+          <i class="fas fa-circle"></i> Perbandingan
+        </div>
+        <h2 class="section-title">Bandingkan <span class="gradient-text">Semua Paket</span></h2>
+        <p class="section-subtitle">
+          Lihat detail fitur lengkap dari setiap paket untuk membantu Anda memilih yang paling sesuai.
+        </p>
+      </div>
+
+      <div class="comparison-table-wrap reveal">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Fitur</th>
+              <th>Silver</th>
+              <th class="highlight">Gold</th>
+              <th>Platinum</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Jumlah Permainan</td>
+              <td>5-6 Games</td>
+              <td class="highlight-col">8-10 Games</td>
+              <td>10-15 Games + Flying Fox</td>
+            </tr>
+            <tr>
+              <td>Durasi Kegiatan</td>
+              <td>Half-day (4-5 jam)</td>
+              <td class="highlight-col">Full-day (8-10 jam)</td>
+              <td>2 Hari 1 Malam</td>
+            </tr>
+            <tr>
+              <td>Makan</td>
+              <td>1x Makan Siang</td>
+              <td class="highlight-col">Siang + Malam</td>
+              <td>Full Meals (3x)</td>
+            </tr>
+            <tr>
+              <td>Coffee Break</td>
+              <td>1x</td>
+              <td class="highlight-col">2x + Snack</td>
+              <td>3x + Snack</td>
+            </tr>
+            <tr>
+              <td>Instruktur Profesional</td>
+              <td><i class="fas fa-check-circle check-icon"></i></td>
+              <td class="highlight-col"><i class="fas fa-check-circle check-icon"></i></td>
+              <td><i class="fas fa-check-circle check-icon"></i></td>
+            </tr>
+            <tr>
+              <td>P3K & Asuransi</td>
+              <td><i class="fas fa-check-circle check-icon"></i></td>
+              <td class="highlight-col"><i class="fas fa-check-circle check-icon"></i></td>
+              <td><i class="fas fa-check-circle check-icon"></i></td>
+            </tr>
+            <tr>
+              <td>Dokumentasi Foto & Video</td>
+              <td><i class="fas fa-times-circle cross-icon"></i></td>
+              <td class="highlight-col"><i class="fas fa-check-circle check-icon"></i></td>
+              <td>Drone & Cinematic</td>
+            </tr>
+            <tr>
+              <td>Sertifikat Peserta</td>
+              <td><i class="fas fa-times-circle cross-icon"></i></td>
+              <td class="highlight-col"><i class="fas fa-check-circle check-icon"></i></td>
+              <td>Sertifikat + Trophy</td>
+            </tr>
+            <tr>
+              <td>Akomodasi</td>
+              <td><i class="fas fa-times-circle cross-icon"></i></td>
+              <td class="highlight-col"><i class="fas fa-times-circle cross-icon"></i></td>
+              <td>Villa / Camp</td>
+            </tr>
+            <tr>
+              <td>BBQ Night & Bonfire</td>
+              <td><i class="fas fa-times-circle cross-icon"></i></td>
+              <td class="highlight-col"><i class="fas fa-times-circle cross-icon"></i></td>
+              <td><i class="fas fa-check-circle check-icon"></i></td>
+            </tr>
+            <tr>
+              <td>Kaos & Merchandise</td>
+              <td><i class="fas fa-times-circle cross-icon"></i></td>
+              <td class="highlight-col"><i class="fas fa-times-circle cross-icon"></i></td>
+              <td><i class="fas fa-check-circle check-icon"></i></td>
+            </tr>
+            <tr>
+              <td><strong>Harga /orang</strong></td>
+              <td><strong>Rp 150K</strong></td>
+              <td class="highlight-col"><strong style="color: var(--primary);">Rp 275K</strong></td>
+              <td><strong>Rp 450K</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       ADD-ONS
+       ============================================ -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">
+          <i class="fas fa-circle"></i> Tambahan
+        </div>
+        <h2 class="section-title">Add-On <span class="gradient-text">Opsional</span></h2>
+        <p class="section-subtitle">
+          Tingkatkan pengalaman outbound Anda dengan layanan tambahan berikut.
+        </p>
+      </div>
+
+      <div class="row g-4 stagger-group">
+        <div class="col-lg-3 col-md-6 stagger-item reveal">
+          <div class="addon-card">
+            <div class="addon-icon"><i class="fas fa-bus"></i></div>
+            <h4>Transportasi Bus</h4>
+            <p>Bus pariwisata AC dari lokasi penjemputan ke venue outbound.</p>
+            <div class="addon-price">Mulai Rp 3.5jt</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 stagger-item reveal">
+          <div class="addon-card">
+            <div class="addon-icon"><i class="fas fa-shirt"></i></div>
+            <h4>Custom Kaos</h4>
+            <p>Kaos event custom dengan desain & logo perusahaan Anda.</p>
+            <div class="addon-price">Rp 65K /pcs</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 stagger-item reveal">
+          <div class="addon-card">
+            <div class="addon-icon"><i class="fas fa-camera-retro"></i></div>
+            <h4>Videographer</h4>
+            <p>Dokumentasi profesional dengan drone dan editing cinematic.</p>
+            <div class="addon-price">Mulai Rp 2.5jt</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 stagger-item reveal">
+          <div class="addon-card">
+            <div class="addon-icon"><i class="fas fa-trophy"></i></div>
+            <h4>Doorprize & Trophy</h4>
+            <p>Paket doorprize menarik dan trophy untuk tim pemenang.</p>
+            <div class="addon-price">Mulai Rp 500K</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       GUARANTEES
+       ============================================ -->
+  <section class="section-padding bg-light-custom">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">
+          <i class="fas fa-circle"></i> Jaminan Kami
+        </div>
+        <h2 class="section-title">Mengapa Memilih <span class="gradient-text">Paket Kami?</span></h2>
+      </div>
+
+      <div class="row g-4 stagger-group">
+        <div class="col-lg-4 col-md-6 stagger-item reveal">
+          <div class="guarantee-card">
+            <div class="guarantee-icon"><i class="fas fa-shield-halved"></i></div>
+            <div>
+              <h4>Garansi Keamanan 100%</h4>
+              <p>Semua peralatan berstandar SNI/internasional. Seluruh instruktur bersertifikat K3 dan asuransi peserta sudah termasuk.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 stagger-item reveal">
+          <div class="guarantee-card">
+            <div class="guarantee-icon"><i class="fas fa-money-bill-wave"></i></div>
+            <div>
+              <h4>Harga Transparan</h4>
+              <p>Tidak ada biaya tersembunyi. Semua komponen harga sudah dijelaskan secara detail di setiap paket.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 stagger-item reveal">
+          <div class="guarantee-card">
+            <div class="guarantee-icon"><i class="fas fa-sliders"></i></div>
+            <div>
+              <h4>100% Kustomisasi</h4>
+              <p>Setiap paket dapat disesuaikan sepenuhnya dengan kebutuhan, jumlah peserta, dan budget Anda.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 stagger-item reveal">
+          <div class="guarantee-card">
+            <div class="guarantee-icon"><i class="fas fa-hand-holding-heart"></i></div>
+            <div>
+              <h4>Kepuasan Terjamin</h4>
+              <p>Tingkat kepuasan klien kami mencapai 98.5%. Jika tidak puas, kami siap diskusi untuk solusi terbaik.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 stagger-item reveal">
+          <div class="guarantee-card">
+            <div class="guarantee-icon"><i class="fas fa-headset"></i></div>
+            <div>
+              <h4>Support Responsif</h4>
+              <p>Tim customer service kami siap membantu 7 hari seminggu via WhatsApp, telepon, atau email.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 stagger-item reveal">
+          <div class="guarantee-card">
+            <div class="guarantee-icon"><i class="fas fa-calendar-check"></i></div>
+            <div>
+              <h4>Reschedule Gratis</h4>
+              <p>Jika cuaca sangat ekstrem, kegiatan dapat dijadwalkan ulang tanpa biaya tambahan.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CTA SECTION
+       ============================================ -->
+  <section class="cta-section section-padding">
+    <div class="container">
+      <div class="cta-wrapper reveal">
+        <h2 class="cta-title">Belum Yakin Pilih Paket Mana?</h2>
+        <p class="cta-text">
+          Konsultasikan kebutuhan Anda secara gratis dan dapatkan rekomendasi paket terbaik dari tim kami!
+        </p>
+        <div class="cta-buttons">
+          <a href="https://wa.me/6281234567890?text=Halo%20BatuOutbound,%20saya%20ingin%20konsultasi%20paket%20outbound" target="_blank" class="btn cta-btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> Konsultasi Gratis
+          </a>
+          <a href="layanan.html" class="btn btn-outline-custom">
+            <i class="fas fa-compass me-2"></i> Lihat Layanan Kami
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-brand">
+              <div class="brand-name">batu<span>outbound</span></div>
+            </div>
+            <p class="footer-desc">
+              Penyedia jasa outbound dan team building terpercaya di Kota Batu, Malang. Ciptakan pengalaman tak terlupakan untuk tim Anda bersama kami.
+            </p>
+            <div class="footer-socials">
+              <a href="https://instagram.com/batuoutbound" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://facebook.com/batuoutbound" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://youtube.com/@batuoutbound" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+              <a href="https://tiktok.com/@batuoutbound" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6">
+            <h5 class="footer-title">Menu</h5>
+            <ul class="footer-links">
+              <li><a href="index.html">Beranda</a></li>
+              <li><a href="about.html">Tentang Kami</a></li>
+              <li><a href="layanan.html">Layanan</a></li>
+              <li><a href="paket.html">Paket</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-6">
+            <h5 class="footer-title">Layanan</h5>
+            <ul class="footer-links">
+              <li><a href="layanan.html#team-building">Team Building</a></li>
+              <li><a href="layanan.html#fun-gathering">Fun Gathering</a></li>
+              <li><a href="layanan.html#adventure-trip">Adventure Trip</a></li>
+              <li><a href="layanan.html#flying-fox">Flying Fox</a></li>
+              <li><a href="layanan.html#paintball">Paintball</a></li>
+              <li><a href="layanan.html#rafting">Rafting</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <h5 class="footer-title">Hubungi Kami</h5>
+            <div class="footer-contact-item">
+              <div class="icon"><i class="fas fa-location-dot"></i></div>
+              <div class="text">
+                <strong>Alamat</strong>
+                Jl. Raya Selecta No. 88, Kota Batu, Malang, Jawa Timur 65312
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <div class="icon"><i class="fas fa-phone"></i></div>
+              <div class="text">
+                <strong>Telepon</strong>
+                +62 812 3456 7890
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <div class="icon"><i class="fas fa-envelope"></i></div>
+              <div class="text">
+                <strong>Email</strong>
+                info@batuoutbound.id
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        &copy; 2024 <a href="index.html">batuoutbound.id</a>. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       BACK TO TOP
+       ============================================ -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- ============================================
+       WHATSAPP FLOAT
+       ============================================ -->
+  <div class="whatsapp-float">
+    <a href="https://wa.me/6281234567890?text=Halo%20BatuOutbound,%20saya%20ingin%20tanya%20tentang%20paket%20outbound" target="_blank" aria-label="Chat WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="js/script.js"></script>
+</body>
+</html>

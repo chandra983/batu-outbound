@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Detail Layanan Fun Gathering Batu Outbound - Ciptakan momen kebersamaan yang seru dan berkesan bersama rekan kerja dan keluarga di Kota Batu.">
+  <meta name="author" content="batuoutbound.id">
+  <title>Fun Gathering | Detail Layanan Batu Outbound</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect rx='20' width='100' height='100' fill='%231a56db'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='50' fill='white' font-family='Arial' font-weight='bold'%3EBO%3C/text%3E%3C/svg%3E">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Hero Section */
+    .service-hero-detail {
+        padding: 180px 0 120px;
+        background: linear-gradient(rgba(11, 17, 32, 0.7), rgba(11, 17, 32, 0.7)), url('https://images.unsplash.com/photo-1472746729193-36ad213ac4a5?w=1920&q=80');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: var(--white);
+        text-align: center;
+    }
+
+    .service-hero-detail .breadcrumb-nav {
+        margin-bottom: 25px;
+        font-size: 14px;
+        color: rgba(255,255,255,0.7);
+    }
+    
+    .service-hero-detail .breadcrumb-nav a {
+        color: rgba(255,255,255,0.7);
+    }
+
+    .service-hero-detail h1 {
+        font-size: 56px;
+        font-weight: 900;
+        margin-bottom: 20px;
+        text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+
+    .service-hero-detail .vibrant-gradient {
+        background: linear-gradient(135deg, var(--accent-light) 0%, var(--white) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 900;
+    }
+
+    /* Info Grid */
+    .info-grid-section {
+        margin-top: -60px;
+        position: relative;
+        z-index: 10;
+        padding-bottom: 80px;
+    }
+
+    .info-card-row {
+        background: var(--white);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-2xl);
+        padding: 40px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+    }
+
+    .info-item {
+        text-align: center;
+        border-right: 1px solid var(--gray-200);
+    }
+
+    .info-item:last-child {
+        border-right: none;
+    }
+
+    .info-item i {
+        font-size: 28px;
+        color: var(--primary);
+        margin-bottom: 12px;
+        display: block;
+    }
+
+    .info-item span {
+        display: block;
+        font-size: 13px;
+        color: var(--gray-500);
+        margin-bottom: 4px;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+    .info-item p {
+        font-size: 18px;
+        font-weight: 800;
+        color: var(--dark);
+        margin: 0;
+    }
+
+    /* Content Layout */
+    .detail-section-padding {
+        padding: 50px 0;
+    }
+
+    .detail-text h2 {
+        font-size: 36px;
+        font-weight: 800;
+        margin-bottom: 25px;
+    }
+
+    .detail-text p {
+        font-size: 17px;
+        line-height: 1.9;
+        color: var(--gray-600);
+        margin-bottom: 30px;
+    }
+
+    /* Feature Grid */
+    .benefit-item {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 25px;
+    }
+
+    .benefit-icon {
+        width: 50px;
+        height: 50px;
+        background: var(--primary-gradient);
+        color: var(--white);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        flex-shrink: 0;
+        box-shadow: 0 4px 12px rgba(26, 86, 219, 0.2);
+    }
+
+    .benefit-content h4 {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .benefit-content p {
+        font-size: 15px;
+        color: var(--gray-600);
+        margin: 0;
+    }
+
+    /* Gallery Grid */
+    .gallery-item {
+        height: 250px;
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        position: relative;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--transition-slow);
+    }
+
+    .gallery-item:hover img {
+        transform: scale(1.1);
+    }
+
+    /* Checklist Section */
+    .checklist-card {
+        background: #f8fafc;
+        border-radius: var(--radius-lg);
+        padding: 40px;
+        border: 1px solid var(--gray-200);
+    }
+
+    .checklist-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .checklist-list li {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--gray-700);
+    }
+
+    .checklist-list li i {
+        color: #10b981;
+        font-size: 18px;
+    }
+
+    /* Pricing Shortcut */
+    .pricing-box {
+        background: var(--primary-gradient);
+        color: var(--white);
+        border-radius: var(--radius-lg);
+        padding: 40px;
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .btn-pricing {
+        background: var(--white);
+        color: var(--primary);
+        padding: 15px 40px;
+        border-radius: 50px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: var(--transition-base);
+        border: none;
+    }
+
+    .btn-pricing:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        color: var(--primary);
+    }
+
+    /* Related Services */
+    .related-services {
+        padding: 100px 0;
+        background: #f1f5f9;
+    }
+
+    .related-card {
+        background: var(--white);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        box-shadow: var(--shadow-md);
+        height: 100%;
+        transition: var(--transition-base);
+    }
+
+    .related-card:hover { transform: translateY(-10px); }
+    .related-img { height: 200px; width: 100%; object-fit: cover; }
+    .related-body { padding: 24px; }
+    .related-title { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+    .related-link { color: var(--primary); font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+
+    @media (max-width: 991px) {
+        .info-card-row { grid-template-columns: repeat(2, 1fr); }
+        .service-hero-detail h1 { font-size: 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <div class="preloader-inner">
+      <div class="loader-circle"></div>
+      <div class="brand-text">batu<span>outbound</span></div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-custom scrolled" id="mainNavbar">
+    <div class="container">
+      <a class="navbar-brand navbar-brand-custom" href="index.html">
+        <div class="brand-icon"><i class="fas fa-mountain-sun"></i></div>
+        batu<span class="brand-dot">outbound</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">Tentang</a></li>
+          <li class="nav-item"><a class="nav-link active" href="layanan.html">Layanan</a></li>
+          <li class="nav-item"><a class="nav-link" href="paket.html">Paket</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item nav-btn-cta">
+            <a class="btn btn-accent-custom" href="https://wa.me/6281234567890?text=Halo%20BatuOutbound,%20saya%20ingin%20tanya%20paket%20Fun%20Gathering" target="_blank">
+              <i class="fab fa-whatsapp"></i> Hubungi Kami
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="service-hero-detail">
+    <div class="container">
+      <div class="breadcrumb-nav">
+        <a href="index.html">Beranda</a> / <a href="layanan.html">Layanan</a> / <span>Fun Gathering</span>
+      </div>
+      <h1 class="reveal">Fun <span class="vibrant-gradient">Gathering</span></h1>
+      <p class="lead max-width-600 mx-auto reveal">
+        Momen kebersamaan penuh tawa dan kebahagiaan untuk mempererat tali silaturahmi dengan suasana santai di Kota Batu.
+      </p>
+    </div>
+  </section>
+
+  <!-- INFO CARDS -->
+  <section class="info-grid-section">
+    <div class="container">
+      <div class="info-card-row reveal">
+        <div class="info-item">
+          <i class="fas fa-clock"></i>
+          <span>Durasi</span>
+          <p>Flexible (3-6 Jam)</p>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-users"></i>
+          <span>Peserta</span>
+          <p>Min. 30 Orang</p>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-location-arrow"></i>
+          <span>Lokasi</span>
+          <p>Cafe / Villa / Park</p>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-medal"></i>
+          <span>Level</span>
+          <p>Easy & Fun</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <section class="detail-section-padding">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-5 mb-lg-0 reveal">
+          <div class="detail-text border-start border-4 border-primary ps-4">
+            <span class="text-primary fw-bold text-uppercase tracking-wider">Tentang Program</span>
+            <h2>Kebersamaan Tanpa Batas</h2>
+            <p>
+              Program Fun Gathering kami dirancang khusus untuk menciptakan suasana ceria tanpa tekanan. Sangat cocok untuk acara tahunan perusahaan (Family Day), reuni sekolah, atau gathering komunitas yang mengutamakan relaksasi dan kegembiraan.
+            </p>
+            <p>
+              Kami mengombinasikan elemen permainan rakyat yang dimodifikasi, hiburan musik, hingga sesi makan bersama yang hangat dengan latar belakang pemandangan alam Kota Batu.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-6 reveal">
+          <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80" class="img-fluid rounded-4 shadow-lg" alt="Fun Gathering Group">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="detail-section-padding bg-light-custom">
+    <div class="container">
+      <div class="section-header text-center mb-5 reveal">
+        <h2 class="fw-bold">Kenapa Memilih <span class="gradient-text">Fun Gathering?</span></h2>
+        <p class="text-muted">Keuntungan yang didapat peserta dalam suasana yang penuh keceriaan.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6 reveal">
+          <div class="benefit-item">
+            <div class="benefit-icon"><i class="fas fa-face-grin-stars"></i></div>
+            <div class="benefit-content">
+              <h4>Stress Relieving</h4>
+              <p>Melepaskan beban pikiran dari rutinitas kerja harian dengan tertawa bersama.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 reveal">
+          <div class="benefit-item">
+            <div class="benefit-icon"><i class="fas fa-heart"></i></div>
+            <div class="benefit-content">
+              <h4>Bonding Family</h4>
+              <p>Meningkatkan rasa kekeluargaan dan kedekatan emosional antar anggota.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 reveal">
+          <div class="benefit-item">
+            <div class="benefit-icon"><i class="fas fa-camera-retro"></i></div>
+            <div class="benefit-content">
+              <h4>Memorable Moment</h4>
+              <p>Menciptakan kenangan indah yang akan selalu diingat dalam album foto tim.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTIVITIES & GALLERY -->
+  <section class="detail-section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 mb-4 reveal">
+          <h2 class="fw-bold">Cuplikan <span class="gradient-text">Keseruan</span></h2>
+          <p class="text-muted">Berbagai pilihan aktivitas yang bisa disesuaikan dengan tema acara Anda.</p>
+        </div>
+      </div>
+      <div class="row g-4 reveal">
+        <div class="col-lg-4">
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1528605105345-5344ea20e269?w=600&q=80" alt="Fun Games">
+            <div class="p-3 bg-white position-absolute bottom-0 w-100 opacity-90">
+              <h5 class="m-0 fw-bold">Fun Games & Lomba</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=600&q=80" alt="Entertainment">
+            <div class="p-3 bg-white position-absolute bottom-0 w-100 opacity-90">
+              <h5 class="m-0 fw-bold">Live Music & Karaoke</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1555244162-803834f70033?w=600&q=80" alt="BBQ">
+            <div class="p-3 bg-white position-absolute bottom-0 w-100 opacity-90">
+              <h5 class="m-0 fw-bold">BBQ Night & Dinner</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-lg-7 reveal">
+            <div class="checklist-card">
+              <h3 class="fw-bold mb-4">Fasilitas Termasuk:</h3>
+              <ul class="checklist-list">
+                <li><i class="fas fa-check-circle"></i> Event Organizer Crew</li>
+                <li><i class="fas fa-check-circle"></i> Sound System Berkualitas</li>
+                <li><i class="fas fa-check-circle"></i> Properti Game & Hadiah</li>
+                <li><i class="fas fa-check-circle"></i> Banner Backdrop Special</li>
+                <li><i class="fas fa-check-circle"></i> Snorkeling / Pool Access</li>
+                <li><i class="fas fa-check-circle"></i> Makan Prasmanan / BBQ</li>
+                <li><i class="fas fa-check-circle"></i> Dokumentasi Cinematic</li>
+              </ul>
+            </div>
+        </div>
+        <div class="col-lg-5 reveal">
+            <div class="pricing-box">
+                <h3 class="text-white">Mulai dari IDR 125rb</h3>
+                <p>Opsi paket hemat hingga premium sesuai budget perusahaan Anda.</p>
+                <a href="paket.html" class="btn btn-pricing">Cek Detail Harga</a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED SERVICES -->
+  <section class="related-services">
+    <div class="container">
+      <div class="section-header text-center mb-5 reveal">
+        <h2 class="fw-bold">Layanan <span class="gradient-text">Terpopuler Lainnya</span></h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6 reveal">
+          <div class="related-card">
+            <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=600&q=80" class="related-img" alt="Team Building">
+            <div class="related-body">
+              <h3 class="related-title">Team Building</h3>
+              <a href="layanan-detail.html" class="related-link">Pelajari Selengkapnya <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 reveal">
+          <div class="related-card">
+            <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&q=80" class="related-img" alt="Adventure Trip">
+            <div class="related-body">
+              <h3 class="related-title">Adventure Trip</h3>
+              <a href="layanan-adventure-trip.html" class="related-link">Pelajari Selengkapnya <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 reveal">
+          <div class="related-card">
+            <img src="https://images.unsplash.com/photo-1504542982118-59308b40fe0c?w=600&q=80" class="related-img" alt="River Rafting">
+            <div class="related-body">
+              <h3 class="related-title">River Rafting</h3>
+              <a href="layanan-rafting.html" class="related-link">Pelajari Selengkapnya <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER Area stays the same as per template -->
+  <footer class="footer">
+    <div class="footer-bottom">
+      <div class="container text-center">
+        &copy; 2024 <a href="index.html">batuoutbound.id</a>. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

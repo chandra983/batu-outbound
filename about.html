@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tentang Batu Outbound - Penyedia jasa outbound dan team building terpercaya di Kota Batu, Malang sejak 2014. Kenali visi, misi, dan tim profesional kami.">
+  <meta name="keywords" content="tentang batu outbound, profil outbound malang, team building batu, outbound terpercaya">
+  <meta name="author" content="batuoutbound.id">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Tentang Kami - Batu Outbound">
+  <meta property="og:description" content="Kenali lebih dekat Batu Outbound, penyedia jasa outbound dan team building terpercaya di Kota Batu, Malang.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://batuoutbound.id/about">
+
+  <title>Tentang Kami | Batu Outbound - Jasa Outbound Terbaik di Kota Batu</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect rx='20' width='100' height='100' fill='%231a56db'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='50' fill='white' font-family='Arial' font-weight='bold'%3EBO%3C/text%3E%3C/svg%3E">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* ============================================
+       ABOUT PAGE SPECIFIC STYLES
+       ============================================ */
+
+    /* Page Hero */
+    .page-hero {
+      position: relative;
+      padding: 160px 0 100px;
+      background: linear-gradient(135deg, #0b1120 0%, #132952 50%, #1a56db 100%);
+      color: var(--white);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -150px;
+      left: -150px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .page-hero .breadcrumb-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 20px;
+    }
+
+    .page-hero .breadcrumb-nav a {
+      color: rgba(255,255,255,0.6);
+      transition: var(--transition-base);
+    }
+
+    .page-hero .breadcrumb-nav a:hover {
+      color: var(--accent-light);
+    }
+
+    .page-hero .breadcrumb-nav i {
+      font-size: 10px;
+    }
+
+    .page-hero-title {
+      font-size: 52px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+      color: var(--white);
+    }
+
+    .page-hero-subtitle {
+      font-size: 18px;
+      color: rgba(255,255,255,0.75);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.8;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Story Section */
+    .story-section {
+      position: relative;
+    }
+
+    .story-image-wrapper {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-2xl);
+    }
+
+    .story-image-wrapper img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+    }
+
+    .story-year-badge {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background: var(--primary-gradient);
+      color: var(--white);
+      padding: 14px 24px;
+      border-radius: var(--radius-md);
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 20px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .story-content .lead-text {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--dark);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .story-content p {
+      color: var(--gray-600);
+      line-height: 1.9;
+      margin-bottom: 16px;
+    }
+
+    /* Vision Mission */
+    .vm-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 40px 32px;
+      height: 100%;
+      border: 1px solid var(--gray-200);
+      transition: var(--transition-base);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .vm-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--primary-gradient);
+    }
+
+    .vm-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-xl);
+      border-color: transparent;
+    }
+
+    .vm-card-icon {
+      width: 72px;
+      height: 72px;
+      background: rgba(26, 86, 219, 0.08);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      color: var(--primary);
+      margin-bottom: 24px;
+    }
+
+    .vm-card h3 {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .vm-card p {
+      color: var(--gray-600);
+      line-height: 1.8;
+      margin-bottom: 0;
+    }
+
+    .vm-card ul {
+      padding: 0;
+      margin: 0;
+    }
+
+    .vm-card ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+
+    .vm-card ul li i {
+      color: var(--primary);
+      margin-top: 4px;
+      flex-shrink: 0;
+    }
+
+    /* Values Section */
+    .values-section {
+      background: linear-gradient(135deg, #0b1120 0%, #0f1f3d 50%, #132952 100%);
+      color: var(--white);
+    }
+
+    .value-card {
+      text-align: center;
+      padding: 36px 24px;
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: var(--transition-base);
+      height: 100%;
+    }
+
+    .value-card:hover {
+      background: rgba(255,255,255,0.08);
+      transform: translateY(-6px);
+      border-color: rgba(26, 86, 219, 0.3);
+    }
+
+    .value-icon {
+      width: 80px;
+      height: 80px;
+      background: rgba(26, 86, 219, 0.15);
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      color: var(--primary-light);
+      margin: 0 auto 24px;
+      transition: var(--transition-base);
+    }
+
+    .value-card:hover .value-icon {
+      background: var(--primary-gradient);
+      color: var(--white);
+      transform: scale(1.1);
+    }
+
+    .value-card h4 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .value-card p {
+      font-size: 14px;
+      color: var(--gray-400);
+      line-height: 1.8;
+      margin-bottom: 0;
+    }
+
+    /* Timeline Section */
+    .timeline {
+      position: relative;
+      padding: 20px 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3px;
+      height: 100%;
+      background: var(--gray-200);
+    }
+
+    .timeline-item {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 50px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-item:nth-child(odd) {
+      flex-direction: row;
+    }
+
+    .timeline-item:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .timeline-content {
+      width: calc(50% - 40px);
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--gray-200);
+      transition: var(--transition-base);
+    }
+
+    .timeline-content:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 20px;
+      background: var(--primary-gradient);
+      border-radius: 50%;
+      border: 4px solid var(--white);
+      box-shadow: var(--shadow-md);
+      z-index: 2;
+    }
+
+    .timeline-year {
+      display: inline-block;
+      padding: 4px 14px;
+      background: rgba(26, 86, 219, 0.1);
+      color: var(--primary);
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      font-family: var(--font-heading);
+    }
+
+    .timeline-content h4 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .timeline-content p {
+      font-size: 14px;
+      color: var(--gray-500);
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+
+    /* Team Grid */
+    .team-grid-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--gray-200);
+      transition: var(--transition-base);
+      height: 100%;
+    }
+
+    .team-grid-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-xl);
+      border-color: transparent;
+    }
+
+    .team-grid-card .card-img {
+      height: 280px;
+      overflow: hidden;
+    }
+
+    .team-grid-card .card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition-slow);
+    }
+
+    .team-grid-card:hover .card-img img {
+      transform: scale(1.08);
+    }
+
+    .team-grid-card .card-info {
+      padding: 24px;
+      text-align: center;
+    }
+
+    .team-grid-card .card-info h4 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .team-grid-card .card-info .role {
+      font-size: 13px;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .team-grid-card .card-info p {
+      font-size: 13px;
+      color: var(--gray-500);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .team-grid-card .socials {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .team-grid-card .socials a {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-sm);
+      background: var(--gray-100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gray-600);
+      transition: var(--transition-base);
+      font-size: 14px;
+    }
+
+    .team-grid-card .socials a:hover {
+      background: var(--primary-gradient);
+      color: var(--white);
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .page-hero-title {
+        font-size: 38px;
+      }
+
+      .page-hero-subtitle {
+        font-size: 16px;
+      }
+
+      .story-image-wrapper img {
+        height: 350px;
+      }
+
+      .timeline::before {
+        left: 20px;
+      }
+
+      .timeline-item,
+      .timeline-item:nth-child(even) {
+        flex-direction: row;
+      }
+
+      .timeline-content {
+        width: calc(100% - 60px);
+        margin-left: 20px;
+      }
+
+      .timeline-dot {
+        left: 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .page-hero {
+        padding: 130px 0 70px;
+      }
+
+      .page-hero-title {
+        font-size: 30px;
+      }
+
+      .page-hero-subtitle {
+        font-size: 15px;
+      }
+
+      .story-image-wrapper img {
+        height: 260px;
+      }
+
+      .story-content .lead-text {
+        font-size: 17px;
+      }
+
+      .vm-card {
+        padding: 30px 24px;
+      }
+
+      .value-card {
+        padding: 28px 20px;
+      }
+
+      .value-icon {
+        width: 64px;
+        height: 64px;
+        font-size: 28px;
+      }
+
+      .team-grid-card .card-img {
+        height: 220px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .page-hero-title {
+        font-size: 26px;
+      }
+
+      .page-hero {
+        padding: 120px 0 60px;
+      }
+
+      .story-image-wrapper img {
+        height: 220px;
+      }
+
+      .story-year-badge {
+        font-size: 16px;
+        padding: 10px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================
+       PRELOADER
+       ============================================ -->
+  <div id="preloader">
+    <div class="preloader-inner">
+      <div class="loader-circle"></div>
+      <div class="brand-text">batu<span>outbound</span></div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       NAVBAR
+       ============================================ -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-custom" id="mainNavbar">
+    <div class="container">
+      <a class="navbar-brand navbar-brand-custom" href="index.html">
+        <div class="brand-icon">
+          <i class="fas fa-mountain-sun"></i>
+        </div>
+        batu<span class="brand-dot">outbound</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Beranda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="about.html">Tentang</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="layanan.html">Layanan</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="paket.html">Paket</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item nav-btn-cta">
+            <a class="btn btn-accent-custom" href="https://wa.me/6281234567890?text=Halo%20BatuOutbound,%20saya%20ingin%20konsultasi%20paket%20outbound" target="_blank">
+              <i class="fab fa-whatsapp"></i> Hubungi Kami
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       PAGE HERO
+       ============================================ -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb-nav">
+        <a href="index.html">Beranda</a>
+        <i class="fas fa-chevron-right"></i>
+        <span>Tentang Kami</span>
+      </div>
+      <h1 class="page-hero-title">Tentang <span class="gradient-text">Batu Outbound</span></h1>
+      <p class="page-hero-subtitle">
+        Kenali lebih dekat perjalanan kami sebagai penyedia jasa outbound dan team building terpercaya di Kota Batu, Malang sejak tahun 2014.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       OUR STORY
+       ============================================ -->
+  <section class="story-section section-padding">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 reveal-left">
+          <div class="story-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80" alt="Tim Batu Outbound">
+            <div class="story-year-badge">
+              <i class="fas fa-calendar-check me-2"></i> Sejak 2014
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 reveal-right">
+          <div class="story-content">
+            <div class="section-badge">
+              <i class="fas fa-circle"></i> Cerita Kami
+            </div>
+            <h2 class="section-title">Membangun <span class="gradient-text">Kekompakan Tim</span> Sejak 2014</h2>
+            <p class="lead-text">
+              Batu Outbound lahir dari kecintaan kami terhadap alam dan pengembangan sumber daya manusia.
+            </p>
+            <p>
+              Berawal dari sebuah tim kecil yang memiliki passion di bidang outdoor activities dan human resource development, kami memulai perjalanan di Kota Batu, Malang pada tahun 2014. Berlokasi di kawasan dengan pesona alam yang luar biasa, kami melihat potensi besar untuk menggabungkan keindahan alam dengan program pengembangan tim yang efektif.
+            </p>
+            <p>
+              Selama lebih dari 10 tahun, kami telah melayani ratusan perusahaan, instansi pemerintah, lembaga pendidikan, dan komunitas dari seluruh Indonesia. Setiap program yang kami rancang selalu mengutamakan keamanan, efektivitas, dan pengalaman yang berkesan bagi seluruh peserta.
+            </p>
+            <a href="paket.html" class="btn btn-primary-custom mt-3">
+              <i class="fas fa-compass me-2"></i> Lihat Paket Kami
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       VISION & MISSION
+       ============================================ -->
+  <section class="section-padding bg-light-custom">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">
+          <i class="fas fa-circle"></i> Visi & Misi
+        </div>
+        <h2 class="section-title">Landasan <span class="gradient-text">Perjalanan Kami</span></h2>
+        <p class="section-subtitle">
+          Visi dan misi yang menjadi fondasi setiap program dan layanan yang kami berikan.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-6 reveal-left">
+          <div class="vm-card">
+            <div class="vm-card-icon">
+              <i class="fas fa-eye"></i>
+            </div>
+            <h3>Visi Kami</h3>
+            <p>
+              Menjadi penyedia jasa outbound dan team building terdepan di Indonesia yang dikenal dengan program berkualitas tinggi, inovatif, dan berdampak nyata terhadap pengembangan sumber daya manusia. Kami bermimpi menciptakan generasi profesional yang kompak, tangguh, dan berjiwa pemimpin melalui pengalaman outdoor yang transformatif.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-6 reveal-right">
+          <div class="vm-card">
+            <div class="vm-card-icon">
+              <i class="fas fa-bullseye"></i>
+            </div>
+            <h3>Misi Kami</h3>
+            <ul>
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <span>Menyediakan program outbound yang aman, profesional, dan menyenangkan dengan standar internasional.</span>
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <span>Mengembangkan inovasi program yang relevan dengan kebutuhan organisasi modern.</span>
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <span>Membangun kemitraan jangka panjang dengan klien melalui pelayanan prima dan konsisten.</span>
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <span>Melestarikan lingkungan alam Kota Batu sebagai arena kegiatan yang berkelanjutan.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CORE VALUES
+       ============================================ -->
+  <section class="values-section section-padding">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: var(--accent-light);">
+          <i class="fas fa-circle"></i> Nilai Kami
+        </div>
+        <h2 class="section-title" style="color: var(--white);">Nilai-Nilai yang <span style="color: var(--accent);">Kami Pegang</span></h2>
+        <p class="section-subtitle" style="color: var(--gray-400);">
+          Prinsip dasar yang menjadi panduan kami dalam setiap aspek layanan dan operasional.
+        </p>
+      </div>
+
+      <div class="row g-4 stagger-group">
+        <div class="col-lg-3 col-md-6 stagger-item reveal">
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-shield-halved"></i>
+            </div>
+            <h4>Keamanan</h4>
+            <p>Keselamatan peserta adalah prioritas utama. Seluruh peralatan berstandar internasional dan instruktur bersertifikat K3.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 stagger-item reveal">
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <h4>Integritas</h4>
+            <p>Kami menjunjung tinggi kejujuran dan transparansi dalam setiap transaksi dan komunikasi dengan klien kami.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 stagger-item reveal">
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h4>Inovasi</h4>
+            <p>Terus mengembangkan program-program kreatif yang relevan dengan perkembangan kebutuhan organisasi modern.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 stagger-item reveal">
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <h4>Keberlanjutan</h4>
+            <p>Berkomitmen pada praktik ramah lingkungan dan melestarikan keindahan alam Kota Batu untuk generasi mendatang.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       TIMELINE / MILESTONES
+       ============================================ -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">
+          <i class="fas fa-circle"></i> Perjalanan Kami
+        </div>
+        <h2 class="section-title">Milestone <span class="gradient-text">Penting Kami</span></h2>
+        <p class="section-subtitle">
+          Jejak langkah perjalanan Batu Outbound dari awal berdiri hingga saat ini.
+        </p>
+      </div>
+
+      <div class="timeline reveal">
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <span class="timeline-year">2014</span>
+            <h4>Awal Perjalanan</h4>
+            <p>Batu Outbound didirikan oleh sekelompok pecinta alam dan profesional HR. Dimulai dengan melayani komunitas lokal dan sekolah di Kota Batu.</p>
+          </div>
+          <div class="timeline-dot"></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <span class="timeline-year">2016</span>
+            <h4>Ekspansi Layanan</h4>
+            <p>Mulai melayani klien korporat dari Surabaya dan Jakarta. Menambah wahana Flying Fox dan High Rope Course ke dalam portofolio layanan.</p>
+          </div>
+          <div class="timeline-dot"></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <span class="timeline-year">2019</span>
+            <h4>500+ Event Sukses</h4>
+            <p>Mencapai milestone 500 event yang terselenggara. Mendapat penghargaan dari Dinas Pariwisata Kota Batu sebagai mitra terbaik.</p>
+          </div>
+          <div class="timeline-dot"></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <span class="timeline-year">2022</span>
+            <h4>Pembaruan Fasilitas</h4>
+            <p>Renovasi besar-besaran pada seluruh fasilitas outbound. Upgrade peralatan ke standar internasional terbaru dan penambahan venue indoor.</p>
+          </div>
+          <div class="timeline-dot"></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <span class="timeline-year">2024</span>
+            <h4>10 Tahun Melayani</h4>
+            <p>Merayakan satu dekade perjalanan dengan lebih dari 15.000 peserta puas. Meluncurkan program premium Platinum Package dengan akomodasi villa.</p>
+          </div>
+          <div class="timeline-dot"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       OUR TEAM
+       ============================================ -->
+  <section class="section-padding bg-light-custom">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">
+          <i class="fas fa-circle"></i> Tim Kami
+        </div>
+        <h2 class="section-title">Kenali <span class="gradient-text">Tim Profesional</span> Kami</h2>
+        <p class="section-subtitle">
+          Orang-orang hebat di balik setiap program outbound yang kami selenggarakan.
+        </p>
+      </div>
+
+      <div class="row g-4 stagger-group">
+        <div class="col-lg-3 col-md-6 stagger-item reveal">
+          <div class="team-grid-card">
+            <div class="card-img">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80" alt="Andi Prasetyo">
+            </div>
+            <div class="card-info">
+              <h4>Andi Prasetyo</h4>
+              <div class="role">Founder & Head Trainer</div>
+              <p>Berpengalaman 15 tahun di bidang outdoor education dan HRD. Bersertifikasi K3 nasional.</p>
+              <div class="socials">
+                <a href="https://instagram.com/batuoutbound" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com/company/batuoutbound" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 stagger-item reveal">
+          <div class="team-grid-card">
+            <div class="card-img">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="Dewi Lestari">
+            </div>
+            <div class="card-info">
+              <h4>Dewi Lestari</h4>
+              <div class="role">Program Director</div>
+              <p>Spesialis perancangan program team building korporat dengan pendekatan experiential learning.</p>
+              <div class="socials">
+                <a href="https://instagram.com/batuoutbound" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com/company/batuoutbound" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 stagger-item reveal">
+          <div class="team-grid-card">
+            <div class="card-img">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80" alt="Rizky Aditya">
+            </div>
+            <div class="card-info">
+              <h4>Rizky Aditya</h4>
+              <div class="role">Lead Instructor</div>
+              <p>Instruktur utama dengan keahlian di high rope, flying fox, dan rafting. Bersertifikasi BNSP.</p>
+              <div class="socials">
+                <a href="https://instagram.com/batuoutbound" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com/company/batuoutbound" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 stagger-item reveal">
+          <div class="team-grid-card">
+            <div class="card-img">
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80" alt="Maya Sari">
+            </div>
+            <div class="card-info">
+              <h4>Maya Sari</h4>
+              <div class="role">Safety Coordinator</div>
+              <p>Bertanggung jawab atas standar keamanan seluruh kegiatan. Ahli P3K dan rescue bersertifikat.</p>
+              <div class="socials">
+                <a href="https://instagram.com/batuoutbound" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com/company/batuoutbound" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       COUNTER SECTION
+       ============================================ -->
+  <section class="counter-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-6">
+          <div class="counter-item">
+            <div class="counter-number" data-target="500" data-suffix="+">0</div>
+            <div class="counter-label">Event Terselenggara</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-6">
+          <div class="counter-item">
+            <div class="counter-number" data-target="15000" data-suffix="+">0</div>
+            <div class="counter-label">Peserta Puas</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-6">
+          <div class="counter-item">
+            <div class="counter-number" data-target="50" data-suffix="+">0</div>
+            <div class="counter-label">Instruktur Ahli</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-6">
+          <div class="counter-item">
+            <div class="counter-number" data-target="98" data-suffix="%">0</div>
+            <div class="counter-label">Tingkat Kepuasan</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CTA SECTION
+       ============================================ -->
+  <section class="cta-section section-padding" id="kontak">
+    <div class="container">
+      <div class="cta-wrapper reveal">
+        <h2 class="cta-title">Siap Membangun Tim yang Lebih Solid?</h2>
+        <p class="cta-text">
+          Konsultasikan kebutuhan outbound Anda secara gratis. Tim kami siap membantu merancang program terbaik untuk perusahaan Anda!
+        </p>
+        <div class="cta-buttons">
+          <a href="https://wa.me/6281234567890?text=Halo%20BatuOutbound,%20saya%20ingin%20konsultasi%20paket%20outbound" target="_blank" class="btn cta-btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> Chat via WhatsApp
+          </a>
+          <a href="tel:+6281234567890" class="btn btn-outline-custom">
+            <i class="fas fa-phone me-2"></i> Telepon Sekarang
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-brand">
+              <div class="brand-name">batu<span>outbound</span></div>
+            </div>
+            <p class="footer-desc">
+              Penyedia jasa outbound dan team building terpercaya di Kota Batu, Malang. Ciptakan pengalaman tak terlupakan untuk tim Anda bersama kami.
+            </p>
+            <div class="footer-socials">
+              <a href="https://instagram.com/batuoutbound" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://facebook.com/batuoutbound" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://youtube.com/@batuoutbound" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+              <a href="https://tiktok.com/@batuoutbound" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6">
+            <h5 class="footer-title">Menu</h5>
+            <ul class="footer-links">
+              <li><a href="index.html">Beranda</a></li>
+              <li><a href="about.html">Tentang Kami</a></li>
+              <li><a href="layanan.html">Layanan</a></li>
+              <li><a href="paket.html">Paket</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-6">
+            <h5 class="footer-title">Layanan</h5>
+            <ul class="footer-links">
+              <li><a href="layanan.html#team-building">Team Building</a></li>
+              <li><a href="layanan.html#fun-gathering">Fun Gathering</a></li>
+              <li><a href="layanan.html#adventure-trip">Adventure Trip</a></li>
+              <li><a href="layanan.html#flying-fox">Flying Fox</a></li>
+              <li><a href="layanan.html#paintball">Paintball</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <h5 class="footer-title">Hubungi Kami</h5>
+            <div class="footer-contact-item">
+              <div class="icon"><i class="fas fa-location-dot"></i></div>
+              <div class="text">
+                <strong>Alamat</strong>
+                Jl. Raya Selecta No. 88, Kota Batu, Malang, Jawa Timur 65312
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <div class="icon"><i class="fas fa-phone"></i></div>
+              <div class="text">
+                <strong>Telepon</strong>
+                +62 812 3456 7890
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <div class="icon"><i class="fas fa-envelope"></i></div>
+              <div class="text">
+                <strong>Email</strong>
+                info@batuoutbound.id
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        &copy; 2024 <a href="index.html">batuoutbound.id</a>. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       BACK TO TOP
+       ============================================ -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- ============================================
+       WHATSAPP FLOAT
+       ============================================ -->
+  <div class="whatsapp-float">
+    <a href="https://wa.me/6281234567890?text=Halo%20BatuOutbound,%20saya%20ingin%20tanya%20tentang%20paket%20outbound" target="_blank" aria-label="Chat WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="js/script.js"></script>
+</body>
+</html>

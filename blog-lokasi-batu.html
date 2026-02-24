@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Temukan rekomendasi lokasi outbound terbaik di Kota Batu Malang tahun 2024. Dari Selecta hingga Coban Talun, pilih tempat terbaik untuk gathering Anda.">
+  <meta name="author" content="batuoutbound.id">
+  <title>Rekomendasi Lokasi Outbound Terbaik di Kota Batu tahun 2024 | Blog Batu Outbound</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect rx='20' width='100' height='100' fill='%231a56db'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='50' fill='white' font-family='Arial' font-weight='bold'%3EBO%3C/text%3E%3C/svg%3E">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    :root {
+      --article-text: #334155;
+      --article-heading: #0f172a;
+    }
+
+    body {
+      background-color: #f8fafc;
+    }
+
+    /* Post Hero Detail */
+    .post-hero-detail {
+      padding: 160px 0 100px;
+      background: linear-gradient(rgba(11, 17, 32, 0.7), rgba(11, 17, 32, 0.7)), url('https://images.unsplash.com/photo-1527525443983-6e60c75fff46?w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: var(--white);
+    }
+
+    .post-breadcrumb {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      font-size: 14px;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    .post-title-h1 {
+      font-size: 48px;
+      font-weight: 800;
+      max-width: 900px;
+      margin: 0 auto;
+      line-height: 1.2;
+      color: #ffffff;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    /* Layout Content */
+    .article-wrapper {
+      margin-top: -60px;
+      padding-bottom: 80px;
+    }
+
+    .main-article-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-xl);
+      padding: 60px;
+      margin-bottom: 40px;
+    }
+
+    /* TOC Styles */
+    .toc-container {
+      background: #f1f5f9;
+      border-radius: var(--radius-md);
+      padding: 25px;
+      margin-bottom: 35px;
+      border-left: 5px solid var(--primary);
+    }
+
+    .toc-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .toc-header h4 {
+      margin: 0;
+      font-size: 18px;
+      color: var(--dark);
+    }
+
+    .toc-body {
+      margin-top: 15px;
+      display: block;
+    }
+
+    .toc-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .toc-list li {
+      margin-bottom: 8px;
+    }
+
+    .toc-list a {
+      color: var(--gray-600);
+      font-size: 15px;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .toc-list a:hover {
+      color: var(--primary);
+    }
+
+    .toc-list .toc-h3 {
+      padding-left: 20px;
+      font-size: 14px;
+    }
+
+    /* Article Body Content */
+    .article-content {
+      color: var(--article-text);
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .article-content h2 {
+      font-size: 32px;
+      font-weight: 700;
+      margin: 50px 0 25px;
+      color: var(--article-heading);
+      scroll-margin-top: 100px;
+    }
+
+    .article-content h3 {
+      font-size: 24px;
+      font-weight: 700;
+      margin: 40px 0 20px;
+      color: var(--article-heading);
+      scroll-margin-top: 100px;
+    }
+
+    .article-content p {
+      margin-bottom: 25px;
+    }
+
+    .main-image-wrap {
+      margin-bottom: 40px;
+    }
+
+    .image-description {
+      text-align: center;
+      font-size: 14px;
+      color: var(--gray-500);
+      margin-top: 12px;
+      font-style: italic;
+    }
+
+    /* Baca Juga */
+    .read-also-box {
+      background: #eff6ff;
+      border: 1px dashed var(--primary-light);
+      padding: 25px;
+      border-radius: var(--radius-md);
+      margin: 35px 0;
+    }
+
+    .read-also-box h5 {
+      color: var(--primary);
+      margin-bottom: 15px;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .read-also-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .read-also-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--dark);
+      font-weight: 600;
+      text-decoration: none;
+      padding: 8px 0;
+      transition: 0.2s;
+    }
+
+    .read-also-link:hover {
+      color: var(--primary);
+      transform: translateX(5px);
+    }
+
+    /* Blockquote */
+    blockquote {
+      background: #f8fafc;
+      border-left: 6px solid var(--accent);
+      padding: 30px 40px;
+      margin: 40px 0;
+      font-family: var(--font-heading);
+      font-style: italic;
+      font-size: 22px;
+      color: var(--dark-soft);
+      position: relative;
+    }
+
+    blockquote::before {
+      content: '\f10d';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      font-size: 20px;
+      color: rgba(6, 182, 212, 0.2);
+    }
+
+    /* GIF / Promo Image */
+    .promo-banner {
+      width: 100%;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-lg);
+      margin: 40px 0;
+    }
+
+    /* FAQ Section */
+    .faq-article {
+      margin-top: 60px;
+    }
+
+    .faq-item {
+      background: #f9fafb;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-sm);
+      margin-bottom: 15px;
+      padding: 20px;
+    }
+
+    .faq-item h5 {
+      font-size: 17px;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+
+    .faq-item p {
+      font-size: 15px;
+      margin-bottom: 0;
+    }
+
+    /* Share Buttons */
+    .share-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin: 50px 0;
+      padding: 25px 0;
+      border-top: 1px solid var(--gray-100);
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .share-container span {
+      font-weight: 700;
+      color: var(--dark);
+      font-size: 15px;
+    }
+
+    .share-btn {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    .share-btn.wa { background: #25D366; }
+    .share-btn.fb { background: #1877F2; }
+    .share-btn.tw { background: #000000; }
+
+    .share-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      color: var(--white);
+    }
+
+    /* Author Profile */
+    .author-box {
+      background: #f1f5f9;
+      padding: 40px;
+      border-radius: var(--radius-lg);
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      margin-top: 60px;
+    }
+
+    .author-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--white);
+      box-shadow: var(--shadow-md);
+    }
+
+    .author-info h4 {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .author-info p {
+      font-size: 15px;
+      margin-bottom: 15px;
+      color: var(--gray-600);
+    }
+
+    .author-socials {
+      display: flex;
+      gap: 15px;
+    }
+
+    .author-socials a {
+      color: var(--primary);
+      font-size: 16px;
+    }
+
+    /* Related Articles Bottom */
+    .related-articles {
+      padding: 80px 0;
+      background: var(--white);
+    }
+
+    .related-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--gray-200);
+      transition: 0.3s;
+      height: 100%;
+    }
+
+    .related-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .related-img {
+      height: 200px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .related-body {
+      padding: 25px;
+    }
+
+    .related-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      line-height: 1.4;
+    }
+
+    .vibrant-gradient {
+        background: linear-gradient(135deg, var(--accent-light) 0%, var(--white) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 900;
+    }
+
+    @media (max-width: 768px) {
+      .post-title-h1 { font-size: 32px; }
+      .main-article-card { padding: 30px 20px; }
+      .author-box { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-custom scrolled" id="mainNavbar">
+    <div class="container">
+      <a class="navbar-brand navbar-brand-custom" href="index.html">
+        <div class="brand-icon"><i class="fas fa-mountain-sun"></i></div>
+        batu<span class="brand-dot">outbound</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">Tentang</a></li>
+          <li class="nav-item"><a class="nav-link" href="layanan.html">Layanan</a></li>
+          <li class="nav-item"><a class="nav-link" href="paket.html">Paket</a></li>
+          <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION ARTICLE -->
+  <header class="post-hero-detail text-center">
+    <div class="container">
+      <div class="post-breadcrumb">
+        <a href="index.html" class="text-white">Home</a>
+        <span>/</span>
+        <a href="blog.html" class="text-white">Blog</a>
+        <span>/</span>
+        <span class="text-white-50">Destinasi</span>
+      </div>
+      <h1 class="post-title-h1">Rekomendasi Lokasi Outbound Terbaik di Kota Batu <span class="vibrant-gradient">2024</span></h1>
+    </div>
+  </header>
+
+  <!-- ARTICLE CONTENT -->
+  <main class="article-wrapper">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="main-article-card">
+            
+            <!-- Main Image -->
+            <div class="main-image-wrap">
+              <img src="https://images.unsplash.com/photo-1527525443983-6e60c75fff46?w=1200&q=80" class="img-fluid rounded shadow-sm" alt="Lokasi Outbound Batu">
+              <p class="image-description">Pemandangan alam yang memukau menjadi daya tarik utama lokasi outbound di Kota Batu.</p>
+            </div>
+
+            <!-- TOC -->
+            <div class="toc-container">
+              <div class="toc-header" id="tocHeader">
+                <h4><i class="fas fa-list-ul me-2"></i> Daftar Isi</h4>
+                <i class="fas fa-chevron-down" id="tocChevron"></i>
+              </div>
+              <div class="toc-body" id="tocBody">
+                <ul class="toc-list" id="generatedToc">
+                  <!-- JS will populate -->
+                </ul>
+              </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="article-content" id="articleBody">
+              <p class="lead">Kota Batu Malang telah lama menjadi primadona bagi pecinta kegiatan luar ruangan. Hawa yang sejuk, pemandangan pegunungan yang asri, serta fasilitas pendukung yang lengkap menjadikannya lokasi ideal untuk outbound.</p>
+
+              <h2 id="taman-rekreasi-selecta">Taman Rekreasi Selecta: Klasik nan Sejuk</h2>
+              <p>Selecta bukan hanya tentang taman bunga. Lokasi ini memiliki area padang rumput yang sangat luas yang sering digunakan untuk aktivitas group games dan team building berskala besar.</p>
+              
+              <h3 id="kelebihan-selecta">Kelebihan Utama Selecta</h3>
+              <p>Kelebihan utama Selecta adalah udaranya yang tetap dingin meskipun di siang hari, serta fasilitas umum yang sangat terawat. Sangat cocok untuk rombongan keluarga maupun instansi pemerintah.</p>
+              
+              <!-- Baca Juga -->
+              <div class="read-also-box">
+                <h5>Baca juga:</h5>
+                <ul class="read-also-list">
+                  <li><a href="blog-detail.html" class="read-also-link"><i class="fas fa-arrow-right"></i> 5 Cara Efektif Meningkatkan Kerjasama Tim</a></li>
+                  <li><a href="layanan-detail.html" class="read-also-link"><i class="fas fa-arrow-right"></i> Detail Layanan Team Building Kami</a></li>
+                </ul>
+              </div>
+
+              <h2 id="coban-talun">Coban Talun: Petualangan Hutan Pinus</h2>
+              <p>Jika tim Anda menginginkan suasana yang lebih menyatu dengan alam, Coban Talun adalah jawabannya. Dikelilingi hutan pinus yang rindang, lokasi ini menawarkan sensasi petualangan yang sesungguhnya.</p>
+              
+              <!-- Blockquote -->
+              <blockquote>
+                "Alam adalah guru terbaik untuk melatih kesabaran dan ketangguhan tim dalam menghadapi tantangan yang tidak terduga."
+              </blockquote>
+
+              <p>Di sini, Anda bisa mengombinasikan outbound dengan kegiatan camping mewah (glamping) atau permainan paintball di tengah hutan.</p>
+
+              <h2 id="paralayang-gunung-banyak">Paralayang Gunung Banyak: View Tinggi</h2>
+              <p>Gunung Banyak menawarkan pemandangan "landscape" Kota Batu yang luar biasa dari ketinggian. Aktivitas outbound di sini biasanya difokuskan pada penguatan mental dan keberanian.</p>
+
+              <!-- Gif / Promo -->
+              <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHthoMDRreHR1ZG05dHNqdWQ0bXBnMWR4YnpxeXJvbnpxZnRkbWd2eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7TKVUn7iM8FMEU24/giphy.gif" class="promo-banner" alt="Keseruan Team Building">
+
+              <h2 id="kesimpulan">Kesimpulan</h2>
+              <p>Setiap sudut Kota Batu memiliki karakteristik unik untuk kegiatan outbound. Pilihan lokasi sangat bergantung pada tujuan kegiatan dan profil peserta. Pastikan Anda berkonsultasi dengan provider profesional untuk mendapatkan rekomendasi yang paling tepat.</p>
+              
+              <!-- FAQ -->
+              <div class="faq-article">
+                <h2 id="faq-section">FAQ Lokasi</h2>
+                <div class="faq-item">
+                  <h5>Apakah lokasi Selecta ramah anak?</h5>
+                  <p>Sangat ramah anak, dengan fasilitas kolam renang dan taman bermain yang luas.</p>
+                </div>
+                <div class="faq-item">
+                  <h5>Bagaimana akses menuju Coban Talun?</h5>
+                  <p>Akses sangat mudah dengan kendaraan roda empat maupun bus pariwisata sedang.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Share Buttons -->
+            <div class="share-container">
+              <span>Bagikan Artikel:</span>
+              <a href="#" class="share-btn wa" title="Share current page to WhatsApp"><i class="fab fa-whatsapp"></i></a>
+              <a href="#" class="share-btn fb" title="Share current page to Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="share-btn tw" title="Share current page to Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+
+            <!-- Author Profile -->
+            <div class="author-box">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&q=80" class="author-img" alt="Penulis">
+              <div class="author-info">
+                <h4>Admin Batu Outbound</h4>
+                <p>Spesialis kegiatan outdoor dan pengembangan SDM dengan pengalaman lebih dari 10 tahun membimbing tim perusahaan menuju performa terbaik.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- RELATED ARTICLES BOTTOM -->
+  <section class="related-articles bg-light-custom">
+    <div class="container">
+      <div class="section-header mb-5">
+        <h2 class="text-center">Artikel <span class="gradient-text">Terkait Lainnya</span></h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="related-card border-0 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=600&q=80" class="related-img" alt="Kerjasama Tim">
+            <div class="related-body">
+              <h3 class="related-title">5 Cara Efektif Meningkatkan Kerjasama Tim Melalui Outbound</h3>
+              <p class="text-muted small mb-4">Pelajari bagaimana aktivitas luar ruangan dapat membangun kepercayaan...</p>
+              <a href="blog-detail.html" class="btn btn-sm btn-primary-custom w-100">Baca Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="related-card border-0 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1506869640319-fe1a24fd76cb?w=600&q=80" class="related-img" alt="Gathering Perusahaan">
+            <div class="related-body">
+              <h3 class="related-title">Keseruan Gathering PT Maju Jaya di Batu Outbound</h3>
+              <p class="text-muted small mb-4">Momen penuh tawa saat tim PT Maju Jaya menaklukkan tantangan...</p>
+              <a href="blog-gathering-maju-jaya.html" class="btn btn-sm btn-primary-custom w-100">Baca Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="related-card border-0 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1528605105345-5344ea20e269?w=600&q=80" class="related-img" alt="Safety Outbound">
+            <div class="related-body">
+              <h3 class="related-title">Pentingnya Safety Briefing Sebelum Memulai Outbound</h3>
+              <p class="text-muted small mb-4">Keselamatan adalah prioritas utama. Ketahui poin-poin pentingnya...</p>
+              <a href="blog-safety-briefing.html" class="btn btn-sm btn-primary-custom w-100">Baca Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER Area - Just simple footer here since main footer is in common script usually or just copied -->
+  <footer class="footer">
+    <div class="footer-bottom">
+      <div class="container text-center">
+        &copy; 2024 <a href="index.html">batuoutbound.id</a>. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Automatic TOC Reading
+      const articleBody = document.getElementById('articleBody');
+      const generatedToc = document.getElementById('generatedToc');
+      const headings = articleBody.querySelectorAll('h2, h3');
+      
+      headings.forEach((heading, index) => {
+        const id = heading.id || `heading-${index}`;
+        heading.id = id;
+        
+        const li = document.createElement('li');
+        li.className = heading.tagName === 'H3' ? 'toc-h3' : '';
+        
+        const a = document.createElement('a');
+        a.href = `#${id}`;
+        a.textContent = heading.textContent;
+        
+        li.appendChild(a);
+        generatedToc.appendChild(li);
+      });
+
+      // 2. TOC Toggle
+      const tocHeader = document.getElementById('tocHeader');
+      const tocBody = document.getElementById('tocBody');
+      const tocChevron = document.getElementById('tocChevron');
+      
+      tocHeader.addEventListener('click', () => {
+        if (tocBody.style.display === 'none') {
+          tocBody.style.display = 'block';
+          tocChevron.style.transform = 'rotate(0deg)';
+        } else {
+          tocBody.style.display = 'none';
+          tocChevron.style.transform = 'rotate(-90deg)';
+        }
+      });
+
+      // 3. Share Functionality
+      const shareLinks = document.querySelectorAll('.share-btn');
+      shareLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const url = encodeURIComponent(window.location.href);
+          const title = encodeURIComponent(document.title);
+          let shareUrl = '';
+          if (link.classList.contains('wa')) shareUrl = `https://api.whatsapp.com/send?text=${title}%20${url}`;
+          if (link.classList.contains('fb')) shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+          if (link.classList.contains('tw')) shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
+          window.open(shareUrl, '_blank', 'width=600,height=400');
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

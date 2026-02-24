@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Blog Batu Outbound - Temukan tips team building, info wisata Kota Batu, dan cerita seru kegiatan outbound kami.">
+  <meta name="author" content="batuoutbound.id">
+  <title>Blog | Batu Outbound - Tips & Cerita Outbound Seru</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect rx='20' width='100' height='100' fill='%231a56db'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='50' fill='white' font-family='Arial' font-weight='bold'%3EBO%3C/text%3E%3C/svg%3E">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Blog Specific Styles */
+    .blog-hero {
+      position: relative;
+      padding: 160px 0 100px;
+      background: linear-gradient(135deg, #0b1120 0%, #132952 50%, #1a56db 100%);
+      color: var(--white);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .blog-hero h1 {
+      color: var(--white);
+    }
+
+    .blog-hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .blog-search-wrap {
+      padding: 40px 0;
+      background: var(--white);
+      position: sticky;
+      top: 70px;
+      z-index: 100;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      margin-bottom: 40px;
+    }
+
+    .search-box {
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 15px 25px 15px 55px;
+      border-radius: 50px;
+      border: 1px solid var(--gray-200);
+      font-size: 16px;
+      transition: all 0.3s ease;
+      background: var(--gray-50);
+    }
+
+    .search-box input:focus {
+      outline: none;
+      border-color: var(--primary);
+      background: var(--white);
+      box-shadow: 0 0 15px rgba(26, 86, 219, 0.1);
+    }
+
+    .search-box i {
+      position: absolute;
+      left: 22px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gray-400);
+      font-size: 18px;
+    }
+
+    .blog-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition-base);
+      height: 100%;
+      border: 1px solid var(--gray-200);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .blog-card-img-wrap {
+      position: relative;
+      overflow: hidden;
+      height: 240px;
+    }
+
+    .blog-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition-slow);
+    }
+
+    .blog-card:hover .blog-card-img {
+      transform: scale(1.1);
+    }
+
+    .blog-card-badge {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      padding: 5px 15px;
+      background: var(--accent-gradient);
+      color: var(--white);
+      border-radius: 50px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .blog-card-body {
+      padding: 24px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-meta {
+      font-size: 13px;
+      color: var(--gray-500);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .blog-meta i {
+      color: var(--primary-light);
+    }
+
+    .blog-card-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.4;
+      color: var(--dark);
+      transition: color 0.3s ease;
+    }
+
+    .blog-card:hover .blog-card-title {
+      color: var(--primary);
+    }
+
+    .blog-excerpt {
+      font-size: 15px;
+      color: var(--gray-600);
+      margin-bottom: 20px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .read-more {
+      margin-top: auto;
+      font-weight: 700;
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+    }
+
+    .read-more i {
+      font-size: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    .blog-card:hover .read-more i {
+      transform: translateX(5px);
+    }
+
+    /* Pagination */
+    .pagination-wrap {
+      margin-top: 60px;
+    }
+
+    .pagination-custom .page-link {
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50% !important;
+      margin: 0 5px;
+      border: 1px solid var(--gray-200);
+      color: var(--gray-700);
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .pagination-custom .page-item.active .page-link {
+      background: var(--primary-gradient);
+      border-color: transparent;
+      box-shadow: var(--shadow-glow);
+    }
+
+    .pagination-custom .page-link:hover {
+      background: var(--gray-100);
+      color: var(--primary);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================
+       PRELOADER
+       ============================================ -->
+  <div id="preloader">
+    <div class="preloader-inner">
+      <div class="loader-circle"></div>
+      <div class="brand-text">batu<span>outbound</span></div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       NAVBAR
+       ============================================ -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-custom" id="mainNavbar">
+    <div class="container">
+      <a class="navbar-brand navbar-brand-custom" href="index.html">
+        <div class="brand-icon">
+          <i class="fas fa-mountain-sun"></i>
+        </div>
+        batu<span class="brand-dot">outbound</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Beranda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">Tentang</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="layanan.html">Layanan</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="paket.html">Paket</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="blog.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item nav-btn-cta">
+            <a class="btn btn-accent-custom" href="https://wa.me/6281234567890?text=Halo%20BatuOutbound,%20saya%20ingin%20konsultasi%20paket%20outbound" target="_blank">
+              <i class="fab fa-whatsapp"></i> Hubungi Kami
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       BLOG HERO
+       ============================================ -->
+  <section class="blog-hero">
+    <div class="container">
+      <div class="breadcrumb-nav text-center mb-4">
+        <a href="index.html" class="text-white-50">Beranda</a>
+        <i class="fas fa-chevron-right text-white-50 mx-2" style="font-size: 10px;"></i>
+        <span class="text-white">Blog</span>
+      </div>
+      <h1 class="display-3 fw-bold mb-3">Blog & <span class="gradient-text">Stories</span></h1>
+      <p class="lead opacity-75 max-width-600 mx-auto">
+        Temukan inspirasi, tips pengembangan tim, dan kabar terbaru dari dunia outbound di Kota Batu.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SEARCH SECTION
+       ============================================ -->
+  <div class="blog-search-wrap">
+    <div class="container">
+      <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" id="blogSearch" placeholder="Cari artikel outbound...">
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       BLOG LIST
+       ============================================ -->
+  <section class="section-padding-sm">
+    <div class="container">
+      <div class="row g-4" id="blog-container">
+        <!-- Blog 1 -->
+        <div class="col-lg-4 col-md-6 blog-item" data-category="tips">
+          <div class="blog-card">
+            <div class="blog-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=800&q=80" class="blog-card-img" alt="Outbound Team Building">
+              <span class="blog-card-badge">Tips & Trik</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-meta">
+                <span><i class="far fa-calendar-alt"></i> 12 Feb 2024</span>
+                <span><i class="far fa-user"></i> Admin</span>
+              </div>
+              <h3 class="blog-card-title">5 Cara Efektif Meningkatkan Kerjasama Tim Melalui Outbound</h3>
+              <p class="blog-excerpt">Pelajari bagaimana aktivitas luar ruangan dapat mencairkan suasana kaku di kantor dan membangun kepercayaan antar anggota tim...</p>
+              <a href="blog-detail.html" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog 2 -->
+        <div class="col-lg-4 col-md-6 blog-item" data-category="destinasi">
+          <div class="blog-card">
+            <div class="blog-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1527525443983-6e60c75fff46?w=800&q=80" class="blog-card-img" alt="Wisata Kota Batu">
+              <span class="blog-card-badge">Destinasi</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-meta">
+                <span><i class="far fa-calendar-alt"></i> 10 Feb 2024</span>
+                <span><i class="far fa-user"></i> Admin</span>
+              </div>
+              <h3 class="blog-card-title">Rekomendasi Lokasi Outbound Terbaik di Kota Batu tahun 2024</h3>
+              <p class="blog-excerpt">Mulai dari hawa sejuk Selecta hingga pemandangan indah Paralayang, inilah tempat-tempat hits untuk kegiatan gathering Anda...</p>
+              <a href="blog-lokasi-batu.html" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog 3 -->
+        <div class="col-lg-4 col-md-6 blog-item" data-category="kegiatan">
+          <div class="blog-card">
+            <div class="blog-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1506869640319-fe1a24fd76cb?w=800&q=80" class="blog-card-img" alt="Gathering Perusahaan">
+              <span class="blog-card-badge">Kegiatan Kami</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-meta">
+                <span><i class="far fa-calendar-alt"></i> 08 Feb 2024</span>
+                <span><i class="far fa-user"></i> Admin</span>
+              </div>
+              <h3 class="blog-card-title">Keseruan Gathering PT Maju Jaya di Batu Outbound</h3>
+              <p class="blog-excerpt">Momen-momen penuh tawa dan semangat terekam saat tim PT Maju Jaya menaklukkan tantangan high rope di Kota Batu...</p>
+              <a href="blog-gathering-maju-jaya.html" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog 4 -->
+        <div class="col-lg-4 col-md-6 blog-item" data-category="tips">
+          <div class="blog-card">
+            <div class="blog-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1528605105345-5344ea20e269?w=800&q=80" class="blog-card-img" alt="Safety Outbound">
+              <span class="blog-card-badge">Tips & Trik</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-meta">
+                <span><i class="far fa-calendar-alt"></i> 05 Feb 2024</span>
+                <span><i class="far fa-user"></i> Admin</span>
+              </div>
+              <h3 class="blog-card-title">Pentingnya Safety Briefing Sebelum Memulai Kegiatan Outbound</h3>
+              <p class="blog-excerpt">Keselamatan adalah prioritas utama. Ketahui poin-poin penting yang harus diperhatikan dalam setiap instruksi safety...</p>
+              <a href="blog-safety-briefing.html" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog 5 -->
+        <div class="col-lg-4 col-md-6 blog-item" data-category="berita">
+          <div class="blog-card">
+            <div class="blog-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1517164850305-99a3e65bb47e?w=800&q=80" class="blog-card-img" alt="Batu Outbound News">
+              <span class="blog-card-badge">Berita</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-meta">
+                <span><i class="far fa-calendar-alt"></i> 01 Feb 2024</span>
+                <span><i class="far fa-user"></i> Admin</span>
+              </div>
+              <h3 class="blog-card-title">Batu Outbound Mendapatkan Penghargaan Provider Terbaik</h3>
+              <p class="blog-excerpt">Kami bangga mengumumkan pencapaian terbaru kami sebagai penyedia jasa outbound paling inovatif tahun ini...</p>
+              <a href="blog-penghargaan.html" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog 6 -->
+        <div class="col-lg-4 col-md-6 blog-item" data-category="destinasi">
+          <div class="blog-card">
+            <div class="blog-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&q=80" class="blog-card-img" alt="Alam Kota Batu">
+              <span class="blog-card-badge">Destinasi</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-meta">
+                <span><i class="far fa-calendar-alt"></i> 28 Jan 2024</span>
+                <span><i class="far fa-user"></i> Admin</span>
+              </div>
+              <h3 class="blog-card-title">Eksplorasi Jalur Trekking Baru di Hutan Pinus Kota Batu</h3>
+              <p class="blog-excerpt">Rasakan sensasi petualangan baru dengan udara segar dan pemandangan hutan pinus yang masih asri dan tenang...</p>
+              <a href="blog-trekking-pinus.html" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pagination (Active menu) -->
+      <nav class="pagination-wrap">
+        <ul class="pagination pagination-custom justify-content-center">
+          <li class="page-item disabled">
+            <a class="page-link" href="#"><i class="fas fa-chevron-left"></i></a>
+          </li>
+          <li class="page-item active"><a class="page-link" href="blog.html">1</a></li>
+          <li class="page-item"><a class="page-link" href="blog.html?page=2">2</a></li>
+          <li class="page-item"><a class="page-link" href="blog.html?page=3">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="blog.html?page=2"><i class="fas fa-chevron-right"></i></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CTA SECTION
+       ============================================ -->
+  <section class="cta-section section-padding">
+    <div class="container">
+      <div class="cta-wrapper reveal">
+        <h2 class="cta-title">Siap Membuat Cerita Bersama Kami?</h2>
+        <p class="cta-text">
+          Konsultasikan rencana event outbound Anda dan biarkan kami membantu merancang program yang berkesan.
+        </p>
+        <div class="cta-buttons">
+          <a href="https://wa.me/6281234567890?text=Halo%20BatuOutbound" target="_blank" class="btn cta-btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> Hubungi Kami Sekarang
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Brand Column -->
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-brand">
+              <div class="brand-name">batu<span>outbound</span></div>
+            </div>
+            <p class="footer-desc">
+              Penyedia jasa outbound dan team building terpercaya di Kota Batu, Malang. Ciptakan pengalaman tak terlupakan untuk tim Anda bersama kami.
+            </p>
+            <div class="footer-socials">
+              <a href="https://instagram.com/batuoutbound" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://facebook.com/batuoutbound" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://youtube.com/@batuoutbound" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+              <a href="https://tiktok.com/@batuoutbound" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-lg-2 col-md-6">
+            <h5 class="footer-title">Menu</h5>
+            <ul class="footer-links">
+              <li><a href="index.html">Beranda</a></li>
+              <li><a href="about.html">Tentang Kami</a></li>
+              <li><a href="layanan.html">Layanan</a></li>
+              <li><a href="paket.html">Paket</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Services Links -->
+          <div class="col-lg-2 col-md-6">
+            <h5 class="footer-title">Layanan</h5>
+            <ul class="footer-links">
+              <li><a href="layanan.html#team-building">Team Building</a></li>
+              <li><a href="layanan.html#fun-gathering">Fun Gathering</a></li>
+              <li><a href="layanan.html#adventure-trip">Adventure Trip</a></li>
+              <li><a href="layanan.html#flying-fox">Flying Fox</a></li>
+              <li><a href="layanan.html#paintball">Paintball</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="col-lg-4 col-md-6">
+            <h5 class="footer-title">Hubungi Kami</h5>
+            <div class="footer-contact-item">
+              <div class="icon"><i class="fas fa-location-dot"></i></div>
+              <div class="text">
+                <strong>Alamat</strong>
+                Jl. Raya Selecta No. 88, Kota Batu, Malang, Jawa Timur 65312
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <div class="icon"><i class="fas fa-phone"></i></div>
+              <div class="text">
+                <strong>Telepon</strong>
+                +62 812 3456 7890
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <div class="icon"><i class="fas fa-envelope"></i></div>
+              <div class="text">
+                <strong>Email</strong>
+                info@batuoutbound.id
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container text-center">
+        &copy; 2024 <a href="index.html">batuoutbound.id</a>. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       BACK TO TOP
+       ============================================ -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- ============================================
+       WHATSAPP FLOAT
+       ============================================ -->
+  <div class="whatsapp-float">
+    <a href="https://wa.me/6281234567890?text=Halo%20BatuOutbound" target="_blank" aria-label="Chat WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="js/script.js"></script>
+
+  <script>
+    // Blog Search & Pagination Logic
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('blogSearch');
+      const blogItems = document.querySelectorAll('.blog-item');
+      const paginationLinks = document.querySelectorAll('.pagination-custom .page-link');
+      const paginationItems = document.querySelectorAll('.pagination-custom .page-item');
+
+      // Search Logic
+      searchInput.addEventListener('input', () => {
+        const query = searchInput.value.toLowerCase();
+        
+        blogItems.forEach(item => {
+          const title = item.querySelector('.blog-card-title').textContent.toLowerCase();
+          const excerpt = item.querySelector('.blog-excerpt').textContent.toLowerCase();
+          const category = item.querySelector('.blog-card-badge').textContent.toLowerCase();
+          
+          if (title.includes(query) || excerpt.includes(query) || category.includes(query)) {
+            item.style.display = 'block';
+            item.style.opacity = '0';
+            setTimeout(() => {
+              item.style.opacity = '1';
+              item.style.transition = 'opacity 0.3s ease';
+            }, 10);
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+
+      // Pagination activation logic (Mocking page changes)
+      paginationLinks.forEach((link, index) => {
+        link.addEventListener('click', (e) => {
+          if (link.parentElement.classList.contains('disabled')) return;
+          
+          if (link.hasAttribute('href') && link.getAttribute('href').includes('page=')) {
+            e.preventDefault(); 
+            
+            paginationItems.forEach(item => item.classList.remove('active'));
+            link.parentElement.classList.add('active');
+            
+            document.querySelector('.blog-search-wrap').scrollIntoView({ behavior: 'smooth' });
+            
+            const container = document.getElementById('blog-container');
+            const itemsArray = Array.from(blogItems);
+            itemsArray.sort(() => Math.random() - 0.5);
+            itemsArray.forEach(item => container.appendChild(item));
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Layanan Batu Outbound - Program outbound lengkap: Team Building, Fun Gathering, Adventure Trip, Flying Fox, Paintball, dan Rafting di Kota Batu, Malang.">
+  <meta name="keywords" content="layanan outbound batu, team building malang, fun gathering batu, adventure trip, flying fox, paintball, rafting">
+  <meta name="author" content="batuoutbound.id">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Layanan Kami - Batu Outbound">
+  <meta property="og:description" content="Program outbound lengkap dari Team Building hingga Adventure Trip. Temukan layanan terbaik untuk tim Anda.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://batuoutbound.id/layanan">
+
+  <title>Layanan Kami | Batu Outbound - Program Outbound Lengkap di Kota Batu</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect rx='20' width='100' height='100' fill='%231a56db'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='50' fill='white' font-family='Arial' font-weight='bold'%3EBO%3C/text%3E%3C/svg%3E">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* ============================================
+       LAYANAN PAGE SPECIFIC STYLES
+       ============================================ */
+
+    /* Page Hero */
+    .page-hero {
+      position: relative;
+      padding: 160px 0 100px;
+      background: linear-gradient(135deg, #0b1120 0%, #132952 50%, #1a56db 100%);
+      color: var(--white);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -150px;
+      left: -150px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .page-hero .breadcrumb-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 20px;
+    }
+
+    .page-hero .breadcrumb-nav a {
+      color: rgba(255,255,255,0.6);
+      transition: var(--transition-base);
+    }
+
+    .page-hero .breadcrumb-nav a:hover {
+      color: var(--accent-light);
+    }
+
+    .page-hero .breadcrumb-nav i {
+      font-size: 10px;
+    }
+
+    .page-hero-title {
+      font-size: 52px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+      color: var(--white);
+    }
+
+    .page-hero-subtitle {
+      font-size: 18px;
+      color: rgba(255,255,255,0.75);
+      max-width: 650px;
+      margin: 0 auto;
+      line-height: 1.8;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Service Detail Section */
+    .service-detail {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .service-detail.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .service-detail-img {
+      flex: 0 0 50%;
+      max-width: 50%;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
+      position: relative;
+    }
+
+    .service-detail-img img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      transition: var(--transition-slow);
+    }
+
+    .service-detail-img:hover img {
+      transform: scale(1.05);
+    }
+
+    .service-detail-img .service-badge {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: var(--primary-gradient);
+      color: var(--white);
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 700;
+      font-family: var(--font-heading);
+      box-shadow: var(--shadow-md);
+    }
+
+    .service-detail-content {
+      flex: 1;
+    }
+
+    .service-detail-content .service-icon-circle {
+      width: 64px;
+      height: 64px;
+      background: rgba(26, 86, 219, 0.08);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    .service-detail-content h2 {
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .service-detail-content .service-desc {
+      color: var(--gray-600);
+      line-height: 1.9;
+      margin-bottom: 24px;
+    }
+
+    .service-detail-content .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 28px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .service-detail-content .feature-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--gray-700);
+      font-weight: 500;
+    }
+
+    .service-detail-content .feature-list li i {
+      color: var(--primary);
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .service-actions {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn-detail-layanan {
+      background: var(--white);
+      color: var(--primary);
+      border: 2px solid var(--primary);
+      padding: 12px 28px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      transition: var(--transition-base);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-detail-layanan:hover {
+      background: var(--primary);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .service-divider {
+      border: none;
+      height: 1px;
+      background: var(--gray-200);
+      margin: 0;
+    }
+
+    /* Process Section */
+    .process-card {
+      text-align: center;
+      padding: 36px 24px;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--gray-200);
+      transition: var(--transition-base);
+      height: 100%;
+      position: relative;
+    }
+
+    .process-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-xl);
+      border-color: transparent;
+    }
+
+    .process-step-number {
+      width: 56px;
+      height: 56px;
+      background: var(--primary-gradient);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 800;
+      font-family: var(--font-heading);
+      margin: 0 auto 20px;
+    }
+
+    .process-card h4 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .process-card p {
+      font-size: 14px;
+      color: var(--gray-500);
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+
+    /* FAQ Light */
+    .faq-light .accordion-button {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--dark);
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      padding: 20px 24px;
+    }
+
+    .faq-light .accordion-button:not(.collapsed) {
+      color: var(--primary);
+      background: rgba(26, 86, 219, 0.04);
+    }
+
+    .faq-light .accordion-button::after {
+      width: 20px;
+      height: 20px;
+      background-size: 20px;
+    }
+
+    .faq-light .accordion-item {
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md) !important;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    .faq-light .accordion-body {
+      color: var(--gray-600);
+      line-height: 1.8;
+      padding: 0 24px 20px;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .page-hero-title {
+        font-size: 38px;
+      }
+
+      .page-hero-subtitle {
+        font-size: 16px;
+      }
+
+      .service-detail,
+      .service-detail.reverse {
+        flex-direction: column;
+        gap: 32px;
+      }
+
+      .service-detail-img {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+
+      .service-detail-img img {
+        height: 320px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .page-hero {
+        padding: 130px 0 70px;
+      }
+
+      .page-hero-title {
+        font-size: 30px;
+      }
+
+      .page-hero-subtitle {
+        font-size: 15px;
+      }
+
+      .service-detail-img img {
+        height: 240px;
+      }
+
+      .service-detail-content h2 {
+        font-size: 24px;
+      }
+
+      .service-detail-content .feature-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .page-hero-title {
+        font-size: 26px;
+      }
+
+      .page-hero {
+        padding: 120px 0 60px;
+      }
+
+      .service-detail-img img {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================
+       PRELOADER
+       ============================================ -->
+  <div id="preloader">
+    <div class="preloader-inner">
+      <div class="loader-circle"></div>
+      <div class="brand-text">batu<span>outbound</span></div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       NAVBAR
+       ============================================ -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-custom" id="mainNavbar">
+    <div class="container">
+      <a class="navbar-brand navbar-brand-custom" href="index.html">
+        <div class="brand-icon">
+          <i class="fas fa-mountain-sun"></i>
+        </div>
+        batu<span class="brand-dot">outbound</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Beranda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">Tentang</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="layanan.html">Layanan</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="paket.html">Paket</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item nav-btn-cta">
+            <a class="btn btn-accent-custom" href="https://wa.me/6281234567890?text=Halo%20BatuOutbound,%20saya%20ingin%20konsultasi%20paket%20outbound" target="_blank">
+              <i class="fab fa-whatsapp"></i> Hubungi Kami
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       PAGE HERO
+       ============================================ -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb-nav">
+        <a href="index.html">Beranda</a>
+        <i class="fas fa-chevron-right"></i>
+        <span>Layanan</span>
+      </div>
+      <h1 class="page-hero-title">Layanan <span class="gradient-text">Outbound Kami</span></h1>
+      <p class="page-hero-subtitle">
+        Beragam program outbound profesional yang dirancang untuk memperkuat kerjasama tim, melatih kepemimpinan, dan menciptakan pengalaman tak terlupakan di alam Kota Batu.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SERVICE 1: TEAM BUILDING
+       ============================================ -->
+  <section class="section-padding" id="team-building">
+    <div class="container">
+      <div class="service-detail reveal">
+        <div class="service-detail-img">
+          <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=900&q=80" alt="Team Building Batu Outbound">
+          <div class="service-badge"><i class="fas fa-star me-1"></i> Terpopuler</div>
+        </div>
+        <div class="service-detail-content">
+          <div class="service-icon-circle">
+            <i class="fas fa-users-gear"></i>
+          </div>
+          <h2>Team Building</h2>
+          <p class="service-desc">
+            Program pelatihan tim yang dirancang secara profesional untuk meningkatkan komunikasi, kepercayaan, dan kolaborasi antar anggota tim. Melalui serangkaian aktivitas interaktif di alam terbuka, peserta akan belajar bekerja sama, memecahkan masalah bersama, dan membangun chemistry yang kuat.
+          </p>
+          <ul class="feature-list">
+            <li><i class="fas fa-check-circle"></i> Problem solving games</li>
+            <li><i class="fas fa-check-circle"></i> Trust building activities</li>
+            <li><i class="fas fa-check-circle"></i> Komunikasi efektif</li>
+            <li><i class="fas fa-check-circle"></i> Leadership workshop</li>
+            <li><i class="fas fa-check-circle"></i> Ice breaking kreatif</li>
+            <li><i class="fas fa-check-circle"></i> Evaluasi & debrief</li>
+          </ul>
+          <div class="service-actions">
+            <a href="layanan-detail.html" class="btn btn-detail-layanan">
+              Detail Layanan <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20program%20Team%20Building" target="_blank" class="btn btn-primary-custom">
+              <i class="fab fa-whatsapp me-2"></i> Konsultasi Gratis
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="service-divider">
+
+  <!-- ============================================
+       SERVICE 2: FUN GATHERING
+       ============================================ -->
+  <section class="section-padding" id="fun-gathering">
+    <div class="container">
+      <div class="service-detail reverse reveal">
+        <div class="service-detail-img">
+          <img src="https://images.unsplash.com/photo-1472746729193-36ad213ac4a5?w=900&q=80" alt="Fun Gathering Batu Outbound">
+        </div>
+        <div class="service-detail-content">
+          <div class="service-icon-circle">
+            <i class="fas fa-face-smile-beam"></i>
+          </div>
+          <h2>Fun Gathering</h2>
+          <p class="service-desc">
+            Acara gathering seru dan santai untuk perusahaan, komunitas, atau keluarga besar. Dirancang untuk mempererat hubungan antar anggota dengan kombinasi permainan ringan, hiburan, dan kebersamaan di alam terbuka Kota Batu yang sejuk dan asri.
+          </p>
+          <ul class="feature-list">
+            <li><i class="fas fa-check-circle"></i> Fun games & lomba</li>
+            <li><i class="fas fa-check-circle"></i> Live music & hiburan</li>
+            <li><i class="fas fa-check-circle"></i> BBQ party</li>
+            <li><i class="fas fa-check-circle"></i> Doorprize & hadiah</li>
+            <li><i class="fas fa-check-circle"></i> Photo booth area</li>
+            <li><i class="fas fa-check-circle"></i> Dokumentasi lengkap</li>
+          </ul>
+          <div class="service-actions">
+            <a href="layanan-fun-gathering.html" class="btn btn-detail-layanan">
+              Detail Layanan <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20program%20Fun%20Gathering" target="_blank" class="btn btn-primary-custom">
+              <i class="fab fa-whatsapp me-2"></i> Konsultasi Gratis
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="service-divider">
+
+  <!-- ============================================
+       SERVICE 3: ADVENTURE TRIP
+       ============================================ -->
+  <section class="section-padding" id="adventure-trip">
+    <div class="container">
+      <div class="service-detail reveal">
+        <div class="service-detail-img">
+          <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=900&q=80" alt="Adventure Trip Batu Outbound">
+          <div class="service-badge"><i class="fas fa-fire me-1"></i> Seru!</div>
+        </div>
+        <div class="service-detail-content">
+          <div class="service-icon-circle">
+            <i class="fas fa-mountain"></i>
+          </div>
+          <h2>Adventure Trip</h2>
+          <p class="service-desc">
+            Paket petualangan alam untuk pengalaman yang lebih menantang dan berkesan. Trekking di jalur pegunungan, camping di bawah bintang, dan eksplorasi alam Kota Batu yang memukau. Cocok untuk tim yang ingin pengalaman luar biasa di alam.
+          </p>
+          <ul class="feature-list">
+            <li><i class="fas fa-check-circle"></i> Trekking & hiking</li>
+            <li><i class="fas fa-check-circle"></i> Camping & bonfire</li>
+            <li><i class="fas fa-check-circle"></i> Jungle exploration</li>
+            <li><i class="fas fa-check-circle"></i> Sunrise trekking</li>
+            <li><i class="fas fa-check-circle"></i> Survival skills</li>
+            <li><i class="fas fa-check-circle"></i> Pemandu lokal ahli</li>
+          </ul>
+          <div class="service-actions">
+            <a href="layanan-adventure-trip.html" class="btn btn-detail-layanan">
+              Detail Layanan <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20program%20Adventure%20Trip" target="_blank" class="btn btn-primary-custom">
+              <i class="fab fa-whatsapp me-2"></i> Konsultasi Gratis
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="service-divider">
+
+  <!-- ============================================
+       SERVICE 4: FLYING FOX & HIGH ROPE
+       ============================================ -->
+  <section class="section-padding" id="flying-fox">
+    <div class="container">
+      <div class="service-detail reverse reveal">
+        <div class="service-detail-img">
+          <img src="https://images.unsplash.com/photo-1530099486328-e021101a494a?w=900&q=80" alt="Flying Fox High Rope Batu Outbound">
+        </div>
+        <div class="service-detail-content">
+          <div class="service-icon-circle">
+            <i class="fas fa-person-falling"></i>
+          </div>
+          <h2>Flying Fox & High Rope</h2>
+          <p class="service-desc">
+            Uji adrenalin dan keberanian peserta dengan wahana flying fox dan high rope course. Dirancang dengan standar keamanan internasional, wahana ini tidak hanya memacu adrenalin tapi juga melatih keberanian, fokus, dan kepercayaan diri.
+          </p>
+          <ul class="feature-list">
+            <li><i class="fas fa-check-circle"></i> Flying fox 150m</li>
+            <li><i class="fas fa-check-circle"></i> High rope course</li>
+            <li><i class="fas fa-check-circle"></i> Rope bridge</li>
+            <li><i class="fas fa-check-circle"></i> Spider net challenge</li>
+            <li><i class="fas fa-check-circle"></i> Peralatan standar SNI</li>
+            <li><i class="fas fa-check-circle"></i> Instruktur bersertifikat</li>
+          </ul>
+          <div class="service-actions">
+            <a href="layanan-flying-fox.html" class="btn btn-detail-layanan">
+              Detail Layanan <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20program%20Flying%20Fox" target="_blank" class="btn btn-primary-custom">
+              <i class="fab fa-whatsapp me-2"></i> Konsultasi Gratis
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="service-divider">
+
+  <!-- ============================================
+       SERVICE 5: PAINTBALL WAR GAMES
+       ============================================ -->
+  <section class="section-padding" id="paintball">
+    <div class="container">
+      <div class="service-detail reveal">
+        <div class="service-detail-img">
+          <img src="https://images.unsplash.com/photo-1560148271-00b5e5850523?w=900&q=80" alt="Paintball Batu Outbound">
+        </div>
+        <div class="service-detail-content">
+          <div class="service-icon-circle">
+            <i class="fas fa-crosshairs"></i>
+          </div>
+          <h2>Paintball War Games</h2>
+          <p class="service-desc">
+            Permainan strategi paintball yang seru dan kompetitif di arena outdoor seluas 2 hektar. Latih kerjasama tim, komunikasi taktis, strategi, dan ketangkasan dalam pertempuran simulation yang aman dan menyenangkan.
+          </p>
+          <ul class="feature-list">
+            <li><i class="fas fa-check-circle"></i> Arena 2 hektar</li>
+            <li><i class="fas fa-check-circle"></i> Marker & peluru premium</li>
+            <li><i class="fas fa-check-circle"></i> Full body protector</li>
+            <li><i class="fas fa-check-circle"></i> Scenario games</li>
+            <li><i class="fas fa-check-circle"></i> Capture the flag</li>
+            <li><i class="fas fa-check-circle"></i> Marshalling & wasit</li>
+          </ul>
+          <div class="service-actions">
+            <a href="layanan-paintball.html" class="btn btn-detail-layanan">
+              Detail Layanan <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20program%20Paintball" target="_blank" class="btn btn-primary-custom">
+              <i class="fab fa-whatsapp me-2"></i> Konsultasi Gratis
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="service-divider">
+
+  <!-- ============================================
+       SERVICE 6: RIVER RAFTING
+       ============================================ -->
+  <section class="section-padding" id="rafting">
+    <div class="container">
+      <div class="service-detail reverse reveal">
+        <div class="service-detail-img">
+          <img src="https://images.unsplash.com/photo-1504542982118-59308b40fe0c?w=900&q=80" alt="Rafting Batu Outbound">
+          <div class="service-badge"><i class="fas fa-water me-1"></i> Favorit</div>
+        </div>
+        <div class="service-detail-content">
+          <div class="service-icon-circle">
+            <i class="fas fa-water"></i>
+          </div>
+          <h2>River Rafting</h2>
+          <p class="service-desc">
+            Arung jeram seru di sungai Kota Batu yang memacu adrenalin. Nikmati sensasi mengarungi jeram grade II-III dengan pemandu profesional berpengalaman. Aktivitas ini melatih kerja sama tim, keberanian, dan ketahanan mental dalam suasana yang menyenangkan.
+          </p>
+          <ul class="feature-list">
+            <li><i class="fas fa-check-circle"></i> Jeram grade II-III</li>
+            <li><i class="fas fa-check-circle"></i> Rute 7-12 km</li>
+            <li><i class="fas fa-check-circle"></i> Perahu & life vest</li>
+            <li><i class="fas fa-check-circle"></i> Guide berpengalaman</li>
+            <li><i class="fas fa-check-circle"></i> Spot foto instagramable</li>
+            <li><i class="fas fa-check-circle"></i> Fasilitas bilas & ganti</li>
+          </ul>
+          <div class="service-actions">
+            <a href="layanan-rafting.html" class="btn btn-detail-layanan">
+              Detail Layanan <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20program%20Rafting" target="_blank" class="btn btn-primary-custom">
+              <i class="fab fa-whatsapp me-2"></i> Konsultasi Gratis
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       HOW WE WORK - PROCESS
+       ============================================ -->
+  <section class="section-padding bg-light-custom">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">
+          <i class="fas fa-circle"></i> Alur Kerja
+        </div>
+        <h2 class="section-title">Bagaimana <span class="gradient-text">Kami Bekerja?</span></h2>
+        <p class="section-subtitle">
+          Proses mudah dan transparan dari konsultasi hingga pelaksanaan event outbound Anda.
+        </p>
+      </div>
+
+      <div class="row g-4 stagger-group">
+        <div class="col-lg-3 col-md-6 stagger-item reveal">
+          <div class="process-card">
+            <div class="process-step-number">1</div>
+            <h4>Konsultasi</h4>
+            <p>Hubungi kami via WhatsApp atau telepon. Diskusikan kebutuhan, jumlah peserta, tanggal, dan budget Anda.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 stagger-item reveal">
+          <div class="process-card">
+            <div class="process-step-number">2</div>
+            <h4>Perencanaan</h4>
+            <p>Tim kami merancang program kustom yang sesuai dengan tujuan dan kebutuhan spesifik organisasi Anda.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 stagger-item reveal">
+          <div class="process-card">
+            <div class="process-step-number">3</div>
+            <h4>Pelaksanaan</h4>
+            <p>Instruktur profesional memimpin seluruh kegiatan dengan standar keamanan tinggi dan penuh keseruan.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 stagger-item reveal">
+          <div class="process-card">
+            <div class="process-step-number">4</div>
+            <h4>Evaluasi</h4>
+            <p>Laporan kegiatan, dokumentasi, dan evaluasi program untuk memastikan dampak positif bagi tim Anda.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FAQ LAYANAN
+       ============================================ -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="section-header reveal">
+            <div class="section-badge">
+              <i class="fas fa-circle"></i> FAQ Layanan
+            </div>
+            <h2 class="section-title">Pertanyaan <span class="gradient-text">Seputar Layanan</span></h2>
+          </div>
+
+          <div class="accordion faq-light reveal" id="faqLayanan">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqL1" aria-expanded="true">
+                  Apakah program bisa dikustomisasi sesuai kebutuhan?
+                </button>
+              </h2>
+              <div id="faqL1" class="accordion-collapse collapse show" data-bs-parent="#faqLayanan">
+                <div class="accordion-body">
+                  Tentu! Semua program kami dapat disesuaikan 100% dengan tujuan, budget, jumlah peserta, dan preferensi klien. Tim program director kami akan berdiskusi langsung untuk merancang program terbaik untuk Anda.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqL2">
+                  Berapa lama durasi program outbound?
+                </button>
+              </h2>
+              <div id="faqL2" class="accordion-collapse collapse" data-bs-parent="#faqLayanan">
+                <div class="accordion-body">
+                  Durasi bervariasi tergantung program yang dipilih. Program half-day (4-5 jam), full-day (8-10 jam), hingga 2 hari 1 malam tersedia. Kami juga menyediakan program 3 hari 2 malam untuk corporate retreat.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqL3">
+                  Apakah sudah termasuk makan dan transportasi?
+                </button>
+              </h2>
+              <div id="faqL3" class="accordion-collapse collapse" data-bs-parent="#faqLayanan">
+                <div class="accordion-body">
+                  Paket Gold dan Platinum sudah termasuk meal plan lengkap (makan siang, makan malam, coffee break). Untuk transportasi, kami dapat membantu mengatur bus atau shuttle dengan biaya tambahan yang kompetitif.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqL4">
+                  Bagaimana standar keamanan yang diterapkan?
+                </button>
+              </h2>
+              <div id="faqL4" class="accordion-collapse collapse" data-bs-parent="#faqLayanan">
+                <div class="accordion-body">
+                  Keamanan adalah prioritas utama kami. Semua peralatan berstandar SNI/internasional, instruktur bersertifikat K3, tersedia tim medis dan P3K di setiap event, serta asuransi kecelakaan untuk seluruh peserta sudah termasuk dalam paket.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqL5">
+                  Bisa gabung beberapa layanan dalam satu event?
+                </button>
+              </h2>
+              <div id="faqL5" class="accordion-collapse collapse" data-bs-parent="#faqLayanan">
+                <div class="accordion-body">
+                  Bisa! Banyak klien kami yang mengombinasikan beberapa layanan, misalnya Team Building + Flying Fox + BBQ Night, atau Adventure Trip + Rafting. Kami akan membantu merancang jadwal yang optimal.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CTA SECTION
+       ============================================ -->
+  <section class="cta-section section-padding" id="kontak">
+    <div class="container">
+      <div class="cta-wrapper reveal">
+        <h2 class="cta-title">Tertarik dengan Layanan Kami?</h2>
+        <p class="cta-text">
+          Konsultasikan kebutuhan outbound Anda secara gratis. Tim kami siap membantu merancang program terbaik untuk perusahaan Anda!
+        </p>
+        <div class="cta-buttons">
+          <a href="https://wa.me/6281234567890?text=Halo%20BatuOutbound,%20saya%20ingin%20konsultasi%20layanan%20outbound" target="_blank" class="btn cta-btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> Chat via WhatsApp
+          </a>
+          <a href="paket.html" class="btn btn-outline-custom">
+            <i class="fas fa-tags me-2"></i> Lihat Paket & Harga
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-brand">
+              <div class="brand-name">batu<span>outbound</span></div>
+            </div>
+            <p class="footer-desc">
+              Penyedia jasa outbound dan team building terpercaya di Kota Batu, Malang. Ciptakan pengalaman tak terlupakan untuk tim Anda bersama kami.
+            </p>
+            <div class="footer-socials">
+              <a href="https://instagram.com/batuoutbound" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://facebook.com/batuoutbound" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://youtube.com/@batuoutbound" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+              <a href="https://tiktok.com/@batuoutbound" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6">
+            <h5 class="footer-title">Menu</h5>
+            <ul class="footer-links">
+              <li><a href="index.html">Beranda</a></li>
+              <li><a href="about.html">Tentang Kami</a></li>
+              <li><a href="layanan.html">Layanan</a></li>
+              <li><a href="paket.html">Paket</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-6">
+            <h5 class="footer-title">Layanan</h5>
+            <ul class="footer-links">
+              <li><a href="#team-building">Team Building</a></li>
+              <li><a href="#fun-gathering">Fun Gathering</a></li>
+              <li><a href="#adventure-trip">Adventure Trip</a></li>
+              <li><a href="#flying-fox">Flying Fox</a></li>
+              <li><a href="#paintball">Paintball</a></li>
+              <li><a href="#rafting">Rafting</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <h5 class="footer-title">Hubungi Kami</h5>
+            <div class="footer-contact-item">
+              <div class="icon"><i class="fas fa-location-dot"></i></div>
+              <div class="text">
+                <strong>Alamat</strong>
+                Jl. Raya Selecta No. 88, Kota Batu, Malang, Jawa Timur 65312
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <div class="icon"><i class="fas fa-phone"></i></div>
+              <div class="text">
+                <strong>Telepon</strong>
+                +62 812 3456 7890
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <div class="icon"><i class="fas fa-envelope"></i></div>
+              <div class="text">
+                <strong>Email</strong>
+                info@batuoutbound.id
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        &copy; 2024 <a href="index.html">batuoutbound.id</a>. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       BACK TO TOP
+       ============================================ -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- ============================================
+       WHATSAPP FLOAT
+       ============================================ -->
+  <div class="whatsapp-float">
+    <a href="https://wa.me/6281234567890?text=Halo%20BatuOutbound,%20saya%20ingin%20tanya%20tentang%20layanan%20outbound" target="_blank" aria-label="Chat WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="js/script.js"></script>
+</body>
+</html>
